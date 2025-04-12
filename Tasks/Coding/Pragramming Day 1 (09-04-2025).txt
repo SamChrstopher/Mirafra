@@ -1,0 +1,59 @@
+//Code to check if string is palindrome
+
+//Approach 1
+
+function isPalindrome(input){
+    input = input.toLowerCase();
+    let rev = input.split("").reverse().join("");
+    if(input===rev){
+        console.log("Its a palindrome")
+    }else{
+        console.log("Its not a palindrome")
+    }
+}
+isPalindrome("raceCar") //Its a palindrome
+
+//Approach 2
+
+function isPalindrome2(input){
+    input=input.toLowerCase();
+    let left=0
+    let right=input.length-1
+    while(left<right){
+        if(input.charAt(left)!==input.charAt(right)){
+            return false
+        }else{
+            return true
+        }
+        left++
+        right--
+    }
+}
+console.log("Palindrome: "+isPalindrome2("raceCar")) //Palindrome: true
+
+//Code to check if sum of array elements is even or odd
+
+//Approach 1
+function evenOdd1(...numbers){
+    let sum=0
+    for(let num of numbers){
+        sum+=num;
+    }
+    if(sum%2==0){
+        console.log("Its an even number")
+    }else{
+        console.log("Its an odd number")
+    }
+}
+evenOdd1(1,2,3,4,5) //Its an odd number
+
+//Approach 2
+function evenOdd2(...numbers){
+    let sum = numbers.reduce((acc,curr)=>{acc+curr},0)
+    if(sum%2==0){
+        console.log("Even number")
+    }else{
+        console.log("Odd number")
+    }
+}
+evenOdd2(1,2,3,4,5)//Odd number
