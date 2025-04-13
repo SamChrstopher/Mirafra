@@ -3,9 +3,10 @@
 A simple login system using HTML, CSS, and JavaScript. 
 The username entered on the login page is stored using `sessionStorage` and displayed on the profile page.
 
-## 🚀 Live Demo
+## 🔗 Live Website
 
-👉 [View Deployed Site]([https://your-deployed-site-link.com](https://taupe-sorbet-b5693e.netlify.app/))
+Visit the deployed site here:  
+**https://taupe-sorbet-b5693e.netlify.app/** 
 
 ## 📌 How It Works
 
