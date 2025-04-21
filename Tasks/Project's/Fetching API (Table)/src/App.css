@@ -1,0 +1,30 @@
+*{
+  margin: 0;
+  box-sizing: border-box;
+}
+
+table,th,td{
+  border: 2px solid black;
+  border-collapse: collapse;
+}
+th{
+  background-color: #077A7D;
+}
+table{
+  margin: 30px auto 0;
+}
+td,th{
+  padding: 10px;
+  text-align: left;
+}
+button{
+  margin: 3px;
+  border-radius: 4px;
+  border: 2px solid black;
+  color: white;
+  background-color: #06202B;
+  padding: 4px;
+}
+td{
+  background-color: #7AE2CF;
+}
