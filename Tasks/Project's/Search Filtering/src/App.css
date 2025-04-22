@@ -1,0 +1,22 @@
+*{
+  margin: 0;
+  box-sizing: border-box;
+}
+body{
+  background-color: #A3D1C6;
+}
+.container{
+  background-color: #2DAA9E;
+  width: 300px;
+  margin: 20px auto 10px auto;
+  border-radius: 5px;
+}
+input{
+  width: 100%;
+  padding: 10px;
+  border-radius: 4px;
+}
+ul{
+  margin-top: 10px;
+  list-style-type: circle;
+}
