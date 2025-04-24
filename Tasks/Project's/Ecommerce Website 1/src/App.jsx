@@ -1,12 +1,14 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import "./App.css";
 
 function App() {
   const [apiData, setApiData] = useState([]);
   const [searchItem, setSearchItem] = useState("");
   const [filteredData, setFilteredData] = useState([]);
-  const [count, setCount] = useState(0);
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [cartItems, setCartItems] = useState([]);
+  const [isCartOpen, setIsCartOpen] = useState(false);
+  const printRef = useRef();
 
   useEffect(() => {
     fetch("https://fakestoreapi.com/products")
@@ -17,6 +19,47 @@ function App() {
       });
   }, []);
 
+  // Add item to the cart
+  const handleAddToCart = (product) => {
+    const existingItem = cartItems.find((item) => item.id === product.id);
+    if (existingItem) {
+      setCartItems(
+        cartItems.map((item) =>
+          item.id === product.id
+            ? { ...item, quantity: item.quantity + 1 }
+            : item
+        )
+      );
+    } else {
+      setCartItems([...cartItems, { ...product, quantity: 1 }]);
+    }
+  };
+
+  // Update the quantity of a cart item
+  const handleQuantityChange = (id, quantity) => {
+    setCartItems(
+      cartItems.map((item) => (item.id === id ? { ...item, quantity } : item))
+    );
+  };
+
+  // Remove an item from the cart
+  const handleRemoveItem = (id) => {
+    setCartItems(cartItems.filter((item) => item.id !== id));
+  };
+
+  // Handle the purchase button
+  const handlePurchase = () => {
+    const printContents = printRef.current.innerHTML;
+    const originalContents = document.body.innerHTML;
+    alert("Proceeding to the Checkout...")
+    document.body.innerHTML = printContents; 
+    window.print(); 
+    document.body.innerHTML = originalContents; 
+
+    setCartItems([]); 
+    window.location.reload();
+  };
+
   const handleChange = (e) => {
     const searchTerm = e.target.value;
     setSearchItem(searchTerm);
@@ -26,6 +69,7 @@ function App() {
     );
     setFilteredData(filtered);
   };
+
   return (
     <div className="container">
       <div className="navbar">
@@ -44,7 +88,9 @@ function App() {
           onClick={() => setMobileMenuOpen(!isMobileMenuOpen)}
         >
           <i
-            className={isMobileMenuOpen ? "fi fi-br-cross" : "fi fi-rr-menu-burger"}
+            className={
+              isMobileMenuOpen ? "fi fi-br-cross" : "fi fi-rr-menu-burger"
+            }
           ></i>
         </div>
 
@@ -55,10 +101,12 @@ function App() {
           <li>Contact</li>
         </ul>
 
-        <span className="icon2">
-          <i className="fi fi-sr-shopping-cart-check logo-icon2"></i> {count}
+        <span className="icon2" onClick={() => setIsCartOpen(true)}>
+          <i className="fi fi-sr-shopping-cart-check logo-icon2"></i>{" "}
+          {cartItems.reduce((acc, item) => acc + item.quantity, 0)}
         </span>
       </div>
+
       <h1>TRENDING NOW</h1>
       <div className="products">
         {filteredData.length === 0 ? (
@@ -82,13 +130,10 @@ function App() {
                   <h3>{item.title}</h3>
                 </div>
                 <div>
-                  <h2 className="price">Price: {item.price}</h2>
+                  <h2 className="price">Price: ${item.price}</h2>
                 </div>
-                {/* <div className="desc">
-                <p>{item.description}</p>
-              </div> */}
                 <div className="btn">
-                  <button onClick={() => setCount(count + 1)}>
+                  <button onClick={() => handleAddToCart(item)}>
                     Add to Cart
                   </button>
                 </div>
@@ -97,6 +142,104 @@ function App() {
           })
         )}
       </div>
+
+      {/* Cart Sidebar */}
+      {isCartOpen && (
+        <div className="cart-sidebar">
+          <div className="cart-header">
+            <h2>Your Cart</h2>
+            <button onClick={() => setIsCartOpen(false)} className="close-cart">
+              X
+            </button>
+          </div>
+          <div className="cart-items">
+            {cartItems.length === 0 ? (
+              <p>Your cart is empty!</p>
+            ) : (
+              cartItems.map((item) => (
+                <div key={item.id} className="cart-item">
+                  <img src={item.image} alt={item.title} />
+                  <div className="cart-item-details">
+                    <h4>{item.title}</h4>
+                    <div className="quantity">
+                      <button
+                        className="btn-decrement"
+                        onClick={() =>
+                          handleQuantityChange(item.id, item.quantity - 1)
+                        }
+                        disabled={item.quantity <= 1}
+                      >
+                        -
+                      </button>
+                      <span>{item.quantity}</span>
+                      <button
+                        className="btn-increment"
+                        onClick={() =>
+                          handleQuantityChange(item.id, item.quantity + 1)
+                        }
+                      >
+                        +
+                      </button>
+                    </div>
+                    <p>Price: ${item.price * item.quantity}</p>
+                    <button
+                      onClick={() => handleRemoveItem(item.id)}
+                      className="remove-item"
+                    >
+                      Remove
+                    </button>
+                  </div>
+                </div>
+              ))
+            )}
+          </div>
+          <div className="cart-footer">
+            <button onClick={handlePurchase} className="purchase-button">
+              Proceed to Checkout
+            </button>
+          </div>
+        </div>
+      )}
+      <div style={{ display: "none" }}>
+        <div ref={printRef}>
+          <h2>Invoice</h2>
+          <table border="1" cellPadding="10" cellSpacing="0" width="100%">
+            <thead>
+              <tr>
+                <th>Product</th>
+                <th>Qty</th>
+                <th>Price</th>
+                <th>Total</th>
+              </tr>
+            </thead>
+            <tbody>
+              {cartItems.map((item) => (
+                <tr key={item.id}>
+                  <td>{item.title}</td>
+                  <td>{item.quantity}</td>
+                  <td>${item.price.toFixed(2)}</td>
+                  <td>${(item.price * item.quantity).toFixed(2)}</td>
+                </tr>
+              ))}
+              <tr>
+                <td
+                  colSpan="3"
+                  style={{ textAlign: "right", fontWeight: "bold" }}
+                >
+                  Grand Total:
+                </td>
+                <td style={{ fontWeight: "bold" }}>
+                  $
+                  {cartItems
+                    .reduce((acc, item) => acc + item.price * item.quantity, 0)
+                    .toFixed(2)}
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
       <footer className="footer">
         <div className="footer-content">
           <div className="footer-section about">
