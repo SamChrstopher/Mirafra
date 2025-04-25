@@ -9,6 +9,16 @@ function App() {
   const [cartItems, setCartItems] = useState([]);
   const [isCartOpen, setIsCartOpen] = useState(false);
   const printRef = useRef();
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+
+  //User Authentication
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [showAuthModal, setShowAuthModal] = useState(true);
+  const [isRegister, setIsRegister] = useState(false);
+  const [userProfilePic, setUserProfilePic] = useState(null);
+  // Store registered user data
+  const [registeredUser, setRegisteredUser] = useState(null);
+  const [errorMessage, setErrorMessage] = useState("");
 
   useEffect(() => {
     fetch("https://fakestoreapi.com/products")
@@ -17,7 +27,60 @@ function App() {
         setApiData(data);
         setFilteredData(data);
       });
+    const storedUser = localStorage.getItem("user");
+    if (storedUser) {
+      const parsedUser = JSON.parse(storedUser);
+      setIsAuthenticated(true);
+      setUserProfilePic(parsedUser.profilePic);
+      setShowAuthModal(false);
+    }
   }, []);
+
+  const handleLogin = (e) => {
+    e.preventDefault();
+    const email = e.target.email.value;
+    const password = e.target.password.value;
+
+    if (
+      registeredUser &&
+      email === registeredUser.email &&
+      password === registeredUser.password
+    ) {
+      const userData = {
+        email,
+        profilePic:
+          "https://files.idyllic.app/files/static/2618803?width=384&optimizer=image",
+      };
+      localStorage.setItem("user", JSON.stringify(userData));
+
+      setIsAuthenticated(true);
+      setUserProfilePic(userData.profilePic);
+      setShowAuthModal(false);
+      setErrorMessage("");
+    } else {
+      setErrorMessage("❌ Please enter the correct email or password.");
+    }
+  };
+
+  const handleRegister = (e) => {
+    e.preventDefault();
+    const email = e.target.email.value;
+    const password = e.target.password.value;
+    const username = e.target.username.value;
+
+    // Save registered user
+    setRegisteredUser({ email, password, username });
+    setIsRegister(false); // go back to login
+    setErrorMessage("✅ Registered successfully. Please login.");
+  };
+
+  const handleLogout = () => {
+    localStorage.removeItem("user");
+    setIsAuthenticated(false);
+    setUserProfilePic(null);
+    setShowAuthModal(true);
+    setErrorMessage("");
+  };
 
   // Add item to the cart
   const handleAddToCart = (product) => {
@@ -51,12 +114,12 @@ function App() {
   const handlePurchase = () => {
     const printContents = printRef.current.innerHTML;
     const originalContents = document.body.innerHTML;
-    alert("Proceeding to the Checkout...")
-    document.body.innerHTML = printContents; 
-    window.print(); 
-    document.body.innerHTML = originalContents; 
+    alert("Proceeding to the Checkout...");
+    document.body.innerHTML = printContents;
+    window.print();
+    document.body.innerHTML = originalContents;
 
-    setCartItems([]); 
+    setCartItems([]);
     window.location.reload();
   };
 
@@ -98,184 +161,269 @@ function App() {
           <li>Home</li>
           <li>About</li>
           <li>Services</li>
+          <li
+            className={`dropdown ${isDropdownOpen ? "active" : ""}`}
+            onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+          >
+            Products <i className="fi fi-rr-angle-small-down"></i>
+            <ul className="dropdown-menu">
+              <li>Electronics</li>
+              <li>Clothing</li>
+              <li>Footwear</li>
+              <li>Accessories</li>
+            </ul>
+          </li>
           <li>Contact</li>
         </ul>
 
-        <span className="icon2" onClick={() => setIsCartOpen(true)}>
-          <i className="fi fi-sr-shopping-cart-check logo-icon2"></i>{" "}
-          {cartItems.reduce((acc, item) => acc + item.quantity, 0)}
-        </span>
-      </div>
-
-      <h1>TRENDING NOW</h1>
-      <div className="products">
-        {filteredData.length === 0 ? (
-          <p>No Product Found!</p>
-        ) : (
-          filteredData.map((item) => {
-            return (
-              <div className="card" key={item.id}>
-                <div>
-                  <img
-                    src={item.image}
-                    alt="Image"
-                    onError={(e) => {
-                      e.target.onerror = null;
-                      e.target.src =
-                        "https://cdn-icons-png.flaticon.com/512/12311/12311758.png";
-                    }}
-                  />
-                </div>
-                <div>
-                  <h3>{item.title}</h3>
-                </div>
-                <div>
-                  <h2 className="price">Price: ${item.price}</h2>
-                </div>
-                <div className="btn">
-                  <button onClick={() => handleAddToCart(item)}>
-                    Add to Cart
-                  </button>
-                </div>
-              </div>
-            );
-          })
-        )}
-      </div>
-
-      {/* Cart Sidebar */}
-      {isCartOpen && (
-        <div className="cart-sidebar">
-          <div className="cart-header">
-            <h2>Your Cart</h2>
-            <button onClick={() => setIsCartOpen(false)} className="close-cart">
-              X
-            </button>
-          </div>
-          <div className="cart-items">
-            {cartItems.length === 0 ? (
-              <p>Your cart is empty!</p>
+        <div className="right-icons">
+          <div className="profile-section">
+            {isAuthenticated ? (
+              <img
+                src={userProfilePic}
+                alt="Profile"
+                className="profile-pic"
+                onClick={handleLogout}
+                title="Click to logout"
+              />
             ) : (
-              cartItems.map((item) => (
-                <div key={item.id} className="cart-item">
-                  <img src={item.image} alt={item.title} />
-                  <div className="cart-item-details">
-                    <h4>{item.title}</h4>
-                    <div className="quantity">
-                      <button
-                        className="btn-decrement"
-                        onClick={() =>
-                          handleQuantityChange(item.id, item.quantity - 1)
-                        }
-                        disabled={item.quantity <= 1}
-                      >
-                        -
-                      </button>
-                      <span>{item.quantity}</span>
-                      <button
-                        className="btn-increment"
-                        onClick={() =>
-                          handleQuantityChange(item.id, item.quantity + 1)
-                        }
-                      >
-                        +
-                      </button>
-                    </div>
-                    <p>Price: ${item.price * item.quantity}</p>
-                    <button
-                      onClick={() => handleRemoveItem(item.id)}
-                      className="remove-item"
-                    >
-                      Remove
-                    </button>
-                  </div>
-                </div>
-              ))
+              <img
+                src="https://i.pinimg.com/736x/b6/e3/1a/b6e31a84c99848a3822f8770db472627.jpg"
+                alt="Default profile"
+                className="profile-pic"
+                onClick={() => setShowAuthModal(true)}
+                title="Login"
+              />
             )}
           </div>
-          <div className="cart-footer">
-            <button onClick={handlePurchase} className="purchase-button">
-              Proceed to Checkout
-            </button>
+          <span className="icon2" onClick={() => setIsCartOpen(true)}>
+            <i className="fi fi-sr-shopping-cart-check logo-icon2"></i>{" "}
+            {cartItems.reduce((acc, item) => acc + item.quantity, 0)}
+          </span>
+        </div>
+      </div>
+
+      {/* Auth Modal */}
+      {showAuthModal && (
+        <div className="auth-modal">
+          <div className="auth-box">
+            <h2>{isRegister ? "Sign Up" : "Login"}</h2>
+
+            <form onSubmit={isRegister ? handleRegister : handleLogin}>
+              <input type="email" name="email" placeholder="Email" required />
+              <input
+                type="password"
+                name="password"
+                placeholder="Password"
+                required
+              />
+              {isRegister && (
+                <input
+                  type="text"
+                  name="username"
+                  placeholder="Username"
+                  required
+                />
+              )}
+              <button type="submit">{isRegister ? "Register" : "Login"}</button>
+            </form>
+
+            {/* Show error or success message */}
+            {errorMessage && (
+              <p
+                style={{
+                  color: errorMessage.includes("❌") ? "red" : "green",
+                  marginTop: "10px",
+                }}
+              >
+                {errorMessage}
+              </p>
+            )}
+
+            <p className="toggle-link">
+              {isRegister ? "Already have an account?" : "Not registered?"}{" "}
+              <span onClick={() => setIsRegister(!isRegister)}>
+                {isRegister ? "Login here" : "Register now"}
+              </span>
+            </p>
           </div>
         </div>
       )}
-      <div style={{ display: "none" }}>
-        <div ref={printRef}>
-          <h2>Invoice</h2>
-          <table border="1" cellPadding="10" cellSpacing="0" width="100%">
-            <thead>
-              <tr>
-                <th>Product</th>
-                <th>Qty</th>
-                <th>Price</th>
-                <th>Total</th>
-              </tr>
-            </thead>
-            <tbody>
-              {cartItems.map((item) => (
-                <tr key={item.id}>
-                  <td>{item.title}</td>
-                  <td>{item.quantity}</td>
-                  <td>${item.price.toFixed(2)}</td>
-                  <td>${(item.price * item.quantity).toFixed(2)}</td>
+      <div className={`page-content ${!isAuthenticated ? "blurred" : ""}`}>
+        <h1>TRENDING NOW</h1>
+        <div className="products">
+          {filteredData.length === 0 ? (
+            <p>No Product Found!</p>
+          ) : (
+            filteredData.map((item) => {
+              return (
+                <div className="card" key={item.id}>
+                  <div>
+                    <img
+                      src={item.image}
+                      alt="Image"
+                      onError={(e) => {
+                        e.target.onerror = null;
+                        e.target.src =
+                          "https://cdn-icons-png.flaticon.com/512/12311/12311758.png";
+                      }}
+                    />
+                  </div>
+                  <div>
+                    <h3>{item.title}</h3>
+                  </div>
+                  <div>
+                    <h2 className="price">Price: ${item.price}</h2>
+                  </div>
+                  <div className="btn">
+                    <button onClick={() => handleAddToCart(item)}>
+                      Add to Cart
+                    </button>
+                  </div>
+                </div>
+              );
+            })
+          )}
+        </div>
+        {/* Cart Sidebar */}
+        {isCartOpen && (
+          <div className="cart-sidebar">
+            <div className="cart-header">
+              <h2>Your Cart</h2>
+              <button
+                onClick={() => setIsCartOpen(false)}
+                className="close-cart"
+              >
+                X
+              </button>
+            </div>
+            <div className="cart-items">
+              {cartItems.length === 0 ? (
+                <p>Your cart is empty!</p>
+              ) : (
+                cartItems.map((item) => (
+                  <div key={item.id} className="cart-item">
+                    <img src={item.image} alt={item.title} />
+                    <div className="cart-item-details">
+                      <h4>{item.title}</h4>
+                      <div className="quantity">
+                        <button
+                          className="btn-decrement"
+                          onClick={() =>
+                            handleQuantityChange(item.id, item.quantity - 1)
+                          }
+                          disabled={item.quantity <= 1}
+                        >
+                          -
+                        </button>
+                        <span>{item.quantity}</span>
+                        <button
+                          className="btn-increment"
+                          onClick={() =>
+                            handleQuantityChange(item.id, item.quantity + 1)
+                          }
+                        >
+                          +
+                        </button>
+                      </div>
+                      <p>Price: ${item.price * item.quantity}</p>
+                      <button
+                        onClick={() => handleRemoveItem(item.id)}
+                        className="remove-item"
+                      >
+                        Remove
+                      </button>
+                    </div>
+                  </div>
+                ))
+              )}
+            </div>
+            <div className="cart-footer">
+              <button onClick={handlePurchase} className="purchase-button">
+                Proceed to Checkout
+              </button>
+            </div>
+          </div>
+        )}
+        <div style={{ display: "none" }}>
+          <div ref={printRef}>
+            <h2>Invoice</h2>
+            <table border="1" cellPadding="10" cellSpacing="0" width="100%">
+              <thead>
+                <tr>
+                  <th>Product</th>
+                  <th>Qty</th>
+                  <th>Price</th>
+                  <th>Total</th>
                 </tr>
-              ))}
-              <tr>
-                <td
-                  colSpan="3"
-                  style={{ textAlign: "right", fontWeight: "bold" }}
-                >
-                  Grand Total:
-                </td>
-                <td style={{ fontWeight: "bold" }}>
-                  $
-                  {cartItems
-                    .reduce((acc, item) => acc + item.price * item.quantity, 0)
-                    .toFixed(2)}
-                </td>
-              </tr>
-            </tbody>
-          </table>
+              </thead>
+              <tbody>
+                {cartItems.map((item) => (
+                  <tr key={item.id}>
+                    <td>{item.title}</td>
+                    <td>{item.quantity}</td>
+                    <td>${item.price.toFixed(2)}</td>
+                    <td>${(item.price * item.quantity).toFixed(2)}</td>
+                  </tr>
+                ))}
+                <tr>
+                  <td
+                    colSpan="3"
+                    style={{ textAlign: "right", fontWeight: "bold" }}
+                  >
+                    Grand Total:
+                  </td>
+                  <td style={{ fontWeight: "bold" }}>
+                    $
+                    {cartItems
+                      .reduce(
+                        (acc, item) => acc + item.price * item.quantity,
+                        0
+                      )
+                      .toFixed(2)}
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
+        <footer className="footer">
+          <div className="footer-content">
+            <div className="footer-section about">
+              <h2>ShopNow</h2>
+              <p>
+                Your one-stop destination for trending products. Quality
+                guaranteed!
+              </p>
+            </div>
+            <div className="footer-section links">
+              <h3>Quick Links</h3>
+              <ul>
+                <li>
+                  <a href="#">Home</a>
+                </li>
+                <li>
+                  <a href="#">About</a>
+                </li>
+                <li>
+                  <a href="#">Services</a>
+                </li>
+                <li>
+                  <a href="#">Contact</a>
+                </li>
+              </ul>
+            </div>
+            <div className="footer-section contact">
+              <h3>Contact Us</h3>
+              <p>Email: support@shopnow.com</p>
+              <p>Phone: +91 82785 00787</p>
+            </div>
+          </div>
+          <div className="footer-bottom">
+            <p>&copy; 2025 ShopNow. All rights reserved.</p>
+          </div>
+        </footer>
       </div>
-
-      <footer className="footer">
-        <div className="footer-content">
-          <div className="footer-section about">
-            <h2>ShopNow</h2>
-            <p>
-              Your one-stop destination for trending products. Quality
-              guaranteed!
-            </p>
-          </div>
-          <div className="footer-section links">
-            <h3>Quick Links</h3>
-            <ul>
-              <li>
-                <a href="#">Home</a>
-              </li>
-              <li>
-                <a href="#">About</a>
-              </li>
-              <li>
-                <a href="#">Services</a>
-              </li>
-              <li>
-                <a href="#">Contact</a>
-              </li>
-            </ul>
-          </div>
-          <div className="footer-section contact">
-            <h3>Contact Us</h3>
-            <p>Email: support@shopnow.com</p>
-            <p>Phone: +91 82785 00787</p>
-          </div>
-        </div>
-        <div className="footer-bottom">
-          <p>&copy; 2025 ShopNow. All rights reserved.</p>
-        </div>
-      </footer>
     </div>
   );
 }
