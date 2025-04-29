@@ -1,0 +1,1802 @@
+[
+  {
+    "id": 1,
+    "title": "Men's Hooded Sweatshirt",
+    "price": 22.50,
+    "description": "Soft and cozy hooded sweatshirt for men.",
+    "category": "men's clothing",
+    "image": "https://m.media-amazon.com/images/I/61J80jFIkHL._AC_UY1100_.jpg",
+    "rating": {
+      "rate": 4.5,
+      "count": 150
+    }
+  },
+  {
+    "id": 2,
+    "title": "Men's Leather Jacket",
+    "price": 120.00,
+    "description": "A stylish leather jacket perfect for evening wear.",
+    "category": "men's clothing",
+    "image": "https://m.media-amazon.com/images/I/61fm5xNR3nL._AC_UY1000_.jpg",
+    "rating": {
+      "rate": 4.7,
+      "count": 60
+    }
+  },
+  {
+    "id": 3,
+    "title": "Men's Polo Shirt",
+    "price": 18.99,
+    "description": "Classic polo shirt made of breathable cotton.",
+    "category": "men's clothing",
+    "image": "https://cdn.shopify.com/s/files/1/2988/4106/files/PDP_POLO_Charcoal-torrey-updated-ghost_600x600.jpg?v=1745515380",
+    "rating": {
+      "rate": 4.2,
+      "count": 100
+    }
+  },
+  {
+    "id": 4,
+    "title": "Men's Denim Jacket",
+    "price": 55.00,
+    "description": "Trendy denim jacket for a casual yet stylish look.",
+    "category": "men's clothing",
+    "image": "https://m.media-amazon.com/images/I/61Ksx0VdeyL._AC_UY1000_.jpg",
+    "rating": {
+      "rate": 4.6,
+      "count": 120
+    }
+  },
+  {
+    "id": 5,
+    "title": "Men's Button-Up Shirt",
+    "price": 30.00,
+    "description": "Formal button-up shirt, great for work or parties.",
+    "category": "men's clothing",
+    "image": "https://images.meesho.com/images/products/280402414/kzump_512.webp",
+    "rating": {
+      "rate": 4.4,
+      "count": 80
+    }
+  },
+  {
+    "id": 6,
+    "title": "Men's Blazer",
+    "price": 75.99,
+    "description": "Classic blazer for formal occasions.",
+    "category": "men's clothing",
+    "image": "https://m.media-amazon.com/images/I/51qzOs3k+0L._SY550_.jpg",
+    "rating": {
+      "rate": 4.5,
+      "count": 90
+    }
+  },
+  {
+    "id": 7,
+    "title": "Men's Track Jacket",
+    "price": 40.00,
+    "description": "Sporty track jacket, perfect for casual and athletic wear.",
+    "category": "men's clothing",
+    "image": "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_600,h_600/global/530095/80/fnd/IND/fmt/png/Iconic-T7-Regular-Fit-Men's-Track-Jacket",
+    "rating": {
+      "rate": 4.3,
+      "count": 110
+    }
+  },
+  {
+    "id": 8,
+    "title": "Men's Bomber Jacket",
+    "price": 80.00,
+    "description": "Classic bomber jacket for a vintage look.",
+    "category": "men's clothing",
+    "image": "https://m.media-amazon.com/images/I/61aMqBVuxBL._SY550_.jpg",
+    "rating": {
+      "rate": 4.6,
+      "count": 65
+    }
+  },
+  {
+    "id": 9,
+    "title": "Men's Rain Jacket",
+    "price": 45.00,
+    "description": "Lightweight rain jacket for all-season protection.",
+    "category": "men's clothing",
+    "image": "https://m.media-amazon.com/images/I/51mXt67j4yL.jpg",
+    "rating": {
+      "rate": 4.2,
+      "count": 150
+    }
+  },
+  {
+    "id": 10,
+    "title": "Men's Casual Jacket",
+    "price": 50.00,
+    "description": "Comfortable casual jacket perfect for everyday wear.",
+    "category": "men's clothing",
+    "image": "https://m.media-amazon.com/images/I/516kf1wmgFL._SY550_.jpg",
+    "rating": {
+      "rate": 4.3,
+      "count": 95
+    }
+  },
+  {
+    "id": 11,
+    "title": "Men's Wool Coat",
+    "price": 99.99,
+    "description": "Warm and stylish wool coat for winter.",
+    "category": "men's clothing",
+    "image": "https://m.media-amazon.com/images/I/81hP1klcWvL._SY550_.jpg",
+    "rating": {
+      "rate": 4.7,
+      "count": 50
+    }
+  },
+  {
+    "id": 12,
+    "title": "Men's Casual Blazer",
+    "price": 65.00,
+    "description": "A relaxed yet elegant blazer for casual events.",
+    "category": "men's clothing",
+    "image": "https://m.media-amazon.com/images/I/61w1mMrEE0L.jpg",
+    "rating": {
+      "rate": 4.4,
+      "count": 80
+    }
+  },
+  {
+    "id": 13,
+    "title": "Men's Field Jacket",
+    "price": 58.00,
+    "description": "Tactical field jacket for outdoor adventures.",
+    "category": "men's clothing",
+    "image": "https://www.mytheresa.com/media/1094/1238/100/65/P00948405.jpg",
+    "rating": {
+      "rate": 4.6,
+      "count": 110
+    }
+  },
+  {
+    "id": 14,
+    "title": "Men's Utility Jacket",
+    "price": 52.00,
+    "description": "Utility jacket with multiple pockets for utility and style.",
+    "category": "men's clothing",
+    "image": "https://m.media-amazon.com/images/I/51P5+EFd8fL.jpg",
+    "rating": {
+      "rate": 4.3,
+      "count": 75
+    }
+  },
+  {
+    "id": 15,
+    "title": "Men's Quilted Jacket",
+    "price": 65.99,
+    "description": "Stylish quilted jacket for a refined look.",
+    "category": "men's clothing",
+    "image": "https://www.mytheresa.com/media/1094/1238/100/7d/P00996357.jpg",
+    "rating": {
+      "rate": 4.5,
+      "count": 60
+    }
+  },
+  {
+    "id": 16,
+    "title": "Men's Puffer Jacket",
+    "price": 80.00,
+    "description": "A durable puffer jacket, ideal for colder weather.",
+    "category": "men's clothing",
+    "image": "https://m.media-amazon.com/images/I/71GPLuey3dL._AC_UY1100_.jpg",
+    "rating": {
+      "rate": 4.7,
+      "count": 110
+    }
+  },
+  {
+    "id": 17,
+    "title": "Men's Varsity Jacket",
+    "price": 55.00,
+    "description": "Classic varsity jacket with a sporty design.",
+    "category": "men's clothing",
+    "image": "https://teelabs.in/wp-content/uploads/2021/07/varsity-front.png",
+    "rating": {
+      "rate": 4.3,
+      "count": 120
+    }
+  },
+  {
+    "id": 18,
+    "title": "Men's Faux Fur Jacket",
+    "price": 85.00,
+    "description": "Faux fur-lined jacket for warmth and luxury.",
+    "category": "men's clothing",
+    "image": "https://www.mytheresa.com/media/1094/1238/100/2e/P01007515.jpg",
+    "rating": {
+      "rate": 4.8,
+      "count": 55
+    }
+  },
+  {
+    "id": 19,
+    "title": "Men's Lightweight Jacket",
+    "price": 32.00,
+    "description": "Lightweight jacket perfect for mild weather.",
+    "category": "men's clothing",
+    "image": "https://img.fruugo.com/product/4/63/1784735634_max.jpg",
+    "rating": {
+      "rate": 4.4,
+      "count": 95
+    }
+  },
+  {
+    "id": 20,
+    "title": "Men's Zip-Up Jacket",
+    "price": 38.00,
+    "description": "Zip-up jacket for versatile styling.",
+    "category": "men's clothing",
+    "image": "https://www.mytheresa.com/media/1094/1238/100/00/P00431777.jpg",
+    "rating": {
+      "rate": 4.5,
+      "count": 100
+    }
+  },
+  {
+    "id": 21,
+    "title": "Men's Fleece Jacket",
+    "price": 39.99,
+    "description": "Warm fleece jacket, ideal for layering.",
+    "category": "men's clothing",
+    "image": "https://m.media-amazon.com/images/I/51tjMTAycBL.jpg",
+    "rating": {
+      "rate": 4.6,
+      "count": 90
+    }
+  },
+  {
+    "id": 22,
+    "title": "Men's Parka Jacket",
+    "price": 110.00,
+    "description": "Winter parka jacket with an insulated lining.",
+    "category": "men's clothing",
+    "image": "https://www.mytheresa.com/media/1094/1238/100/5f/P00954889.jpg",
+    "rating": {
+      "rate": 4.7,
+      "count": 120
+    }
+  },
+  {
+    "id": 23,
+    "title": "Men's Bomber Jacket",
+    "price": 78.00,
+    "description": "A stylish bomber jacket, suitable for casual looks.",
+    "category": "men's clothing",
+    "image": "https://www.mytheresa.com/media/1094/1238/100/6e/P00953983.jpg",
+    "rating": {
+      "rate": 4.6,
+      "count": 65
+    }
+  },
+  {
+    "id": 24,
+    "title": "Men's Military Jacket",
+    "price": 70.00,
+    "description": "Military-inspired jacket for rugged wear.",
+    "category": "men's clothing",
+    "image": "https://m.media-amazon.com/images/I/71bTwMwkBML._SX466_.jpg",
+    "rating": {
+      "rate": 4.5,
+      "count": 80
+    }
+  },
+  {
+    "id": 25,
+    "title": "Men's Outdoor Jacket",
+    "price": 85.00,
+    "description": "Outdoor jacket designed for tough conditions.",
+    "category": "men's clothing",
+    "image": "https://www.fc-moto.de/WebRoot/FCMotoDB/Shops/10207048/5F4F/53E2/9516/D193/2A6B/AC1E/140A/3031/3173-1_ml.jpg",
+    "rating": {
+      "rate": 4.6,
+      "count": 95
+    }
+  },
+{
+    "id": 26,
+    "title": "Women's Denim Jacket",
+    "price": 60.00,
+    "description": "A classic denim jacket, perfect for casual wear.",
+    "category": "women's clothing",
+    "image": "https://www.mytheresa.com/media/1094/1238/100/d5/P00891428.jpg",
+    "rating": {
+      "rate": 4.5,
+      "count": 120
+    }
+  },
+  {
+    "id": 27,
+    "title": "Women's Trench Coat",
+    "price": 85.00,
+    "description": "A stylish trench coat with a belt for a sophisticated look.",
+    "category": "women's clothing",
+    "image": "https://www.mytheresa.com/media/1094/1238/100/40/P00847550.jpg",
+    "rating": {
+      "rate": 4.7,
+      "count": 100
+    }
+  },
+  {
+    "id": 28,
+    "title": "Women's Puffer Jacket",
+    "price": 75.00,
+    "description": "A warm and lightweight puffer jacket, ideal for winter.",
+    "category": "women's clothing",
+    "image": "https://www.mytheresa.com/media/1094/1238/100/e7/P00974424.jpg",
+    "rating": {
+      "rate": 4.6,
+      "count": 110
+    }
+  },
+  {
+    "id": 29,
+    "title": "Women's Leather Jacket",
+    "price": 110.00,
+    "description": "A stylish and classic leather jacket for all occasions.",
+    "category": "women's clothing",
+    "image": "https://www.mytheresa.com/media/1094/1238/100/01/P01012804.jpg",
+    "rating": {
+      "rate": 4.8,
+      "count": 90
+    }
+  },
+  {
+    "id": 30,
+    "title": "Women's Wool Coat",
+    "price": 130.00,
+    "description": "A luxurious wool coat for cold winter days.",
+    "category": "women's clothing",
+    "image": "https://www.mytheresa.com/media/1094/1238/100/8f/P00894696.jpg",
+    "rating": {
+      "rate": 4.7,
+      "count": 80
+    }
+  },
+  {
+    "id": 31,
+    "title": "Women's Bomber Jacket",
+    "price": 65.00,
+    "description": "A trendy bomber jacket for a casual, chic look.",
+    "category": "women's clothing",
+    "image": "https://www.mytheresa.com/media/1094/1238/100/4f/P00956484.jpg",
+    "rating": {
+      "rate": 4.5,
+      "count": 95
+    }
+  },
+  {
+    "id": 32,
+    "title": "Women's Cardigan Sweater",
+    "price": 35.00,
+    "description": "Soft and cozy cardigan, perfect for layering over any outfit.",
+    "category": "women's clothing",
+    "image": "https://www.mytheresa.com/media/1094/1238/100/ea/P00455302.jpg",
+    "rating": {
+      "rate": 4.4,
+      "count": 120
+    }
+  },
+  {
+    "id": 33,
+    "title": "Women's Parka Jacket",
+    "price": 120.00,
+    "description": "Warm parka jacket, perfect for cold weather conditions.",
+    "category": "women's clothing",
+    "image": "https://www.mytheresa.com/media/1094/1238/100/aa/P00983364.jpg",
+    "rating": {
+      "rate": 4.6,
+      "count": 85
+    }
+  },
+  {
+    "id": 34,
+    "title": "Women's Long Sleeve Blazer",
+    "price": 70.00,
+    "description": "A formal and stylish long sleeve blazer for professional wear.",
+    "category": "women's clothing",
+    "image": "https://www.mytheresa.com/media/1094/1238/100/cd/P00994223.jpg",
+    "rating": {
+      "rate": 4.7,
+      "count": 100
+    }
+  },
+  {
+    "id": 35,
+    "title": "Women's Faux Fur Coat",
+    "price": 90.00,
+    "description": "A luxurious faux fur coat for a chic winter look.",
+    "category": "women's clothing",
+    "image": "https://www.mytheresa.com/media/1094/1238/100/18/P00996486.jpg",
+    "rating": {
+      "rate": 4.8,
+      "count": 75
+    }
+  },
+  {
+    "id": 36,
+    "title": "Women's Hoodie Sweatshirt",
+    "price": 40.00,
+    "description": "A comfortable hoodie for casual, everyday wear.",
+    "category": "women's clothing",
+    "image": "https://www.mytheresa.com/media/1094/1238/100/5c/P00912081.jpg",
+    "rating": {
+      "rate": 4.4,
+      "count": 115
+    }
+  },
+  {
+    "id": 37,
+    "title": "Women's Lightweight Jacket",
+    "price": 45.00,
+    "description": "A lightweight jacket perfect for layering in mild weather.",
+    "category": "women's clothing",
+    "image": "https://www.mytheresa.com/media/1094/1238/100/a9/P01026277.jpg",
+    "rating": {
+      "rate": 4.3,
+      "count": 105
+    }
+  },
+  {
+    "id": 38,
+    "title": "Women's Peacoat",
+    "price": 95.00,
+    "description": "A classic double-breasted peacoat for a timeless look.",
+    "category": "women's clothing",
+    "image": "https://www.mytheresa.com/media/1094/1238/100/fe/P00988533.jpg",
+    "rating": {
+      "rate": 4.6,
+      "count": 100
+    }
+  },
+  {
+    "id": 39,
+    "title": "Women's Duster Coat",
+    "price": 70.00,
+    "description": "A long and elegant duster coat for a sophisticated appearance.",
+    "category": "women's clothing",
+    "image": "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcTuGuot4sQNNGRbSWZzAO9WnVvFldiTKBi2aZwSxXMz4Pi9y_hOO1LPw88I277LqkSwziYdUACvgU8bDu47QA0GBAptA26r53oriI_dk7NFm3oPR2fEl2g8JQ",
+    "rating": {
+      "rate": 4.5,
+      "count": 90
+    }
+  },
+  {
+    "id": 40,
+    "title": "Women's Wrap Coat",
+    "price": 80.00,
+    "description": "A flattering wrap coat to keep you warm and stylish.",
+    "category": "women's clothing",
+    "image": "https://www.mytheresa.com/media/1094/1238/100/0b/P01014130.jpg",
+    "rating": {
+      "rate": 4.6,
+      "count": 110
+    }
+  },
+  {
+    "id": 41,
+    "title": "Women's Safari Jacket",
+    "price": 60.00,
+    "description": "A versatile safari jacket for casual and outdoor wear.",
+    "category": "women's clothing",
+    "image": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcRmCmT8FgdsV8-61q7LKqtBwkBm-WkhlFpYSxflGBlZcWaxAjliuaoIC-kiGYkkF6BpfbjBOncXrY1uPsKPPk3CwomCtU8tIMsIzBWrRkrTlabgCeKkwJrhHg",
+    "rating": {
+      "rate": 4.4,
+      "count": 85
+    }
+  },
+  {
+    "id": 42,
+    "title": "Women's Rain Jacket",
+    "price": 50.00,
+    "description": "A lightweight rain jacket for rainy weather protection.",
+    "category": "women's clothing",
+    "image": "https://www.mytheresa.com/media/1094/1238/100/05/P01026292.jpg",
+    "rating": {
+      "rate": 4.3,
+      "count": 115
+    }
+  },
+  {
+    "id": 43,
+    "title": "Women's Quilted Jacket",
+    "price": 55.00,
+    "description": "A warm quilted jacket, perfect for the fall season.",
+    "category": "women's clothing",
+    "image": "https://www.mytheresa.com/media/1094/1238/100/3e/P01026274.jpg",
+    "rating": {
+      "rate": 4.6,
+      "count": 95
+    }
+  },
+  {
+    "id": 44,
+    "title": "Women's Chambray Shirt Jacket",
+    "price": 50.00,
+    "description": "A stylish chambray shirt jacket for a relaxed yet chic look.",
+    "category": "women's clothing",
+    "image": "https://www.mytheresa.com/media/1094/1238/100/fb/P01006067.jpg",
+    "rating": {
+      "rate": 4.5,
+      "count": 105
+    }
+  },
+  {
+    "id": 45,
+    "title": "Women's Shearling Jacket",
+    "price": 120.00,
+    "description": "Cozy shearling jacket with a soft and warm interior.",
+    "category": "women's clothing",
+    "image": "https://www.mytheresa.com/media/1094/1238/100/d2/P01019779.jpg",
+    "rating": {
+      "rate": 4.7,
+      "count": 90
+    }
+  },
+  {
+    "id": 46,
+    "title": "Women's Quilted Vest",
+    "price": 40.00,
+    "description": "Lightweight and comfortable quilted vest for casual outings.",
+    "category": "women's clothing",
+    "image": "https://www.mytheresa.com/media/1094/1238/100/e2/P00959384.jpg",
+    "rating": {
+      "rate": 4.4,
+      "count": 80
+    }
+  },
+  {
+    "id": 47,
+    "title": "Women's Button-Up Cardigan",
+    "price": 35.00,
+    "description": "A cozy cardigan for layering over your favorite outfits.",
+    "category": "women's clothing",
+    "image": "https://www.mytheresa.com/media/1094/1238/100/21/P00907827.jpg",
+    "rating": {
+      "rate": 4.3,
+      "count": 95
+    }
+  },
+  {
+    "id": 48,
+    "title": "Women's Bomber Vest",
+    "price": 50.00,
+    "description": "A stylish bomber vest for a trendy look.",
+    "category": "women's clothing",
+    "image": "https://www.mytheresa.com/media/1094/1238/100/78/P00991406.jpg",
+    "rating": {
+      "rate": 4.5,
+      "count": 75
+    }
+  },
+  {
+    "id": 49,
+    "title": "Women's Double-Breasted Coat",
+    "price": 110.00,
+    "description": "A chic and elegant double-breasted coat for a formal appearance.",
+    "category": "women's clothing",
+    "image": "https://www.mytheresa.com/media/1094/1238/100/fe/P00988533.jpg",
+    "rating": {
+      "rate": 4.7,
+      "count": 85
+    }
+  },
+  {
+    "id": 50,
+    "title": "Women's Fleece Pullover",
+    "price": 40.00,
+    "description": "Soft fleece pullover, ideal for chilly days.",
+    "category": "women's clothing",
+    "image": "https://www.mytheresa.com/media/1094/1238/100/8c/P01003130.jpg",
+    "rating": {
+      "rate": 4.6,
+      "count": 100
+    }
+  },
+{
+    "id": 51,
+    "title": "Apple iPhone 13",
+    "price": 799.99,
+    "description": "The latest iPhone with a stunning OLED display and advanced camera system.",
+    "category": "smartphones",
+    "image": "https://ivenus.in/wp-content/uploads/2023/12/iPhone_13_Blue_PDP_Image_Position-1A__GBEN_823x.webp",
+    "rating": {
+      "rate": 4.8,
+      "count": 500
+    }
+  },
+  {
+    "id": 52,
+    "title": "Samsung Galaxy S21",
+    "price": 749.99,
+    "description": "A powerful smartphone with a dynamic AMOLED display and 5G connectivity.",
+    "category": "smartphones",
+    "image": "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcTmp8m3QmQaOj9b1F6mF5fv6PXPlwt0S_REH_wg8onrzgkLJtCOwmVY11zFp_n5nn39-wBPujBokdOIMReJY1We3KKumnr5msm-VAezlE2EV0eWbJ6oLk1jCg",
+    "rating": {
+      "rate": 4.7,
+      "count": 450
+    }
+  },
+  {
+    "id": 53,
+    "title": "Google Pixel 6",
+    "price": 599.99,
+    "description": "Google's flagship phone with the latest Tensor chip and top-tier camera performance.",
+    "category": "smartphones",
+    "image": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcRPiGDR2eDf8SP9bzn-hFSQg2CoAMFvTT2vLbwElkOiE4P1y9zE--ZGoEZ0Wj5fVqUBVqt198o8RWf7y2lE6QKWzljxfRHDIRxEsZKEAyAFsQl3JgsWZbk1-Q",
+    "rating": {
+      "rate": 4.6,
+      "count": 400
+    }
+  },
+  {
+    "id": 54,
+    "title": "OnePlus 9 Pro",
+    "price": 969.00,
+    "description": "High-performance smartphone with Hasselblad camera and smooth 120Hz display.",
+    "category": "smartphones",
+    "image": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcRo4Lo58kcPu8rBwlXRx0oqxNnZQnttO0Qvd5oor0vLrU_Z8TQK7Ufv97WAhvhGTmEzRukaj2buLxJMwcyJaRMS0dLpSHmuVVWqfvVZ-Hcwx-Fsyk9yq9wl",
+    "rating": {
+      "rate": 4.5,
+      "count": 380
+    }
+  },
+  {
+    "id": 55,
+    "title": "Xiaomi Mi 11",
+    "price": 749.99,
+    "description": "A sleek and powerful device with a 108MP camera and Snapdragon 888 processor.",
+    "category": "smartphones",
+    "image": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcRmT7b_Dw1XK-MIEnEySEtdzigLWT7QeGqNPba-2HYaTSt84ms9yPo5DLcZNJ-CbjPE5JABq0LiFleA7qY_r8BreknHtbtd4twH0bugBu0TxmSPtXQFsRRqGA",
+    "rating": {
+      "rate": 4.4,
+      "count": 350
+    }
+  },
+  {
+    "id": 56,
+    "title": "Samsung Galaxy A52",
+    "price": 399.99,
+    "description": "A budget-friendly phone with great performance and an AMOLED display.",
+    "category": "smartphones",
+    "image": "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcSmoMel3rmlkmHdFoA1VcILiqAshvZxLyjYq4UYy2ImeNoalvm0GZIAKY11ZaCq-GtSv-Id9qM3WgEsMpEWcedhli1BA5p2HmopmOXn4UIir2utmqupKGpW",
+    "rating": {
+      "rate": 4.4,
+      "count": 300
+    }
+  },
+  {
+    "id": 57,
+    "title": "Apple iPhone SE (2020)",
+    "price": 399.00,
+    "description": "Compact and affordable iPhone with powerful performance and a classic design.",
+    "category": "smartphones",
+    "image": "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcRtrS-JhnLr0eXPD6m7TmEtD9iuIvqLTl7PxZ58bKzlCh_C2Vw8Kf4ZTR4ad7qHD-kp6f3UcFREXsdS62_9qs7jIACaFj-c80ew1K0dE4P2wJMtCrABObfR",
+    "rating": {
+      "rate": 4.6,
+      "count": 420
+    }
+  },
+  {
+    "id": 58,
+    "title": "Samsung Galaxy Z Flip 3",
+    "price": 999.99,
+    "description": "A foldable phone with a unique design and the latest tech features.",
+    "category": "smartphones",
+    "image": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcQaUdpjwp14mO95QzWiNZAHa_x7v9p8GmSChzl-IGrIZ80tK-B0h5jQAZizmg8DJtViP4govw_w5VF7BsNuh4_zaPB8tuMyqKvb1im5WsMhqaXPFFFxs61rA_7R",
+    "rating": {
+      "rate": 4.7,
+      "count": 250
+    }
+  },
+  {
+    "id": 59,
+    "title": "Motorola Moto G Power",
+    "price": 249.99,
+    "description": "A budget phone with a massive battery that can last for days.",
+    "category": "smartphones",
+    "image": "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcSrNyZExHaieS4MoveKit1yxbIGJT8APJC7Tyb2MtrNZv-jdKDGBScRmonz8IPyQMl4oMGPU7maBJEf0qyY9soFKdSfNlU9CVfkjmnReBg",
+    "rating": {
+      "rate": 4.3,
+      "count": 270
+    }
+  },
+  {
+    "id": 60,
+    "title": "Google Pixel 5a",
+    "price": 449.99,
+    "description": "Mid-range phone with excellent camera performance and 5G support.",
+    "category": "smartphones",
+    "image": "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcRqneJnm-fGGKmVpAVZtbkJcW1rgdaoUQcB7Rxeh_70Dqc0Xw9lwy0E0WhvuPrBoTOD2Lvs_LyUvTr6a__34h610eCspjfcHmIP51-Iebc",
+    "rating": {
+      "rate": 4.5,
+      "count": 320
+    }
+  },
+  {
+    "id": 61,
+    "title": "Samsung Galaxy Note 20 Ultra",
+    "price": 1299.99,
+    "description": "A high-end smartphone with a huge display, S Pen support, and excellent cameras.",
+    "category": "smartphones",
+    "image": "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcQC3aYiJaZMV6Z9f8Akh8pbZoiAcE9CRMaV_Tf-dX11yzfUxyVZtSHbA3Oim4DSpiDgoCwOd6nzFTILWQBvSRHRMHCpS7AAI-WtP0U057Vqq6c_oWFoGy9yhQ",
+    "rating": {
+      "rate": 4.8,
+      "count": 450
+    }
+  },
+  {
+    "id": 62,
+    "title": "OnePlus Nord 2",
+    "price": 499.00,
+    "description": "A budget-friendly smartphone with flagship-like performance.",
+    "category": "smartphones",
+    "image": "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcQBBxSv5Qx_XWKD8dvKU9eRHRdOTvnYbb-e8K4CuVKwSXFD1wjQH16JcizElYAS-YQYJ6A_gieSdCAx5QiUWaU_hjgrKInJRIgpZX3RqnfksN5TIds3_VLN_Q",
+    "rating": {
+      "rate": 4.4,
+      "count": 290
+    }
+  },
+  {
+    "id": 63,
+    "title": "Realme 8 Pro",
+    "price": 279.99,
+    "description": "Affordable smartphone with a 108MP camera and fast charging.",
+    "category": "smartphones",
+    "image": "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcSysDT-d2us6u78HK32ruiqkC24-htEmH-4YproL7We7E19_Fk9pDb-D2J_ERAOyGg0xhXF7ocFos_xrQrwhAYuHDMRXKfg12L5_-dLlYq_",
+    "rating": {
+      "rate": 4.3,
+      "count": 280
+    }
+  },
+  {
+    "id": 64,
+    "title": "Xiaomi Redmi Note 10 Pro",
+    "price": 279.99,
+    "description": "A mid-range phone with a stunning AMOLED display and 64MP camera.",
+    "category": "smartphones",
+    "image": "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcQm9VIMNpRXEK9NrPebpDOHQK2bQZIqoSQl8jOJpzdECCk9aRy5fNs3b56-HfScJ1GknFtLa4wg4YW9U7my3KWOXPVrAZMLNjDo3he39g_2IFhv-cuCrG2DIQ",
+    "rating": {
+      "rate": 4.5,
+      "count": 340
+    }
+  },
+  {
+    "id": 65,
+    "title": "Oppo Reno 5 Pro 5G",
+    "price": 499.00,
+    "description": "A stylish and powerful 5G phone with a sleek design and fast charging.",
+    "category": "smartphones",
+    "image": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcQFGmaffQ0-rTVrbI_p3jRvAnIhbsy4z26pO2ct9D_mQYYgHL-dwgGbSYkA5ILkOx8R0Hxn4Sc0RB_Or6TSmnRDAGG-f4UEbqNNaEr0vQbZHENA5RcF0_ITjQ",
+    "rating": {
+      "rate": 4.4,
+      "count": 320
+    }
+  },
+  {
+    "id": 66,
+    "title": "Sony Xperia 1 II",
+    "price": 1199.99,
+    "description": "Premium smartphone with a 4K display and professional-grade camera features.",
+    "category": "smartphones",
+    "image": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcQ-8JnpLbjLNYH049y-ZDYH_yMdpIQJAtqrtwkb9yANPg3e7-oSvPG-mbdoxjn0RMrYTomoJosZm-UsvotVntucTT7IF9fc4BjmrMDooBVLW63GQ0KrPb2yeA",
+    "rating": {
+      "rate": 4.6,
+      "count": 210
+    }
+  },
+  {
+    "id": 67,
+    "title": "Asus ROG Phone 5",
+    "price": 999.00,
+    "description": "A flagship gaming phone with an AMOLED display and top-tier performance.",
+    "category": "smartphones",
+    "image": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcTD3N5S8FL3G_JNs5CE5DYUd67BIsszOtK2vVwdz-Em9PN3ltvrhTtSLw8YG1p2vu8dB0knJN5mp4VefrGuje-FcpIYZBb77GCChM06BVo",
+    "rating": {
+      "rate": 4.7,
+      "count": 250
+    }
+  },
+  {
+    "id": 68,
+    "title": "Nokia 8.3 5G",
+    "price": 599.00,
+    "description": "Affordable 5G phone with a pure Android experience and Zeiss optics.",
+    "category": "smartphones",
+    "image": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcST7LOJLhwmAlc9I3JAk3ioSpNVLmME2Y9oiuBkOurJ7mTobqYxTfKuw9UTgdcQkHW8vmKqeSgSDK2yWsQueOB_rG5jKUcwXsU1rbjT6anp",
+    "rating": {
+      "rate": 4.4,
+      "count": 230
+    }
+  },
+  {
+    "id": 69,
+    "title": "Vivo V21 5G",
+    "price": 399.00,
+    "description": "Mid-range 5G phone with an excellent camera and stylish design.",
+    "category": "smartphones",
+    "image": "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcQ_uvYSwEbsh3jyGmwmWLKiZLJdSVhOrSO75mVwcsX2ic_urrLsIYwO-zHNXTCZRge1y06BxWzYpMzHwk2OycwUvBo8JYFFE2Rmr3R-o1FUZ_1-r85SGPww",
+    "rating": {
+      "rate": 4.4,
+      "count": 270
+    }
+  },
+  {
+    "id": 70,
+    "title": "Apple iPhone 12 Mini",
+    "price": 699.99,
+    "description": "Compact and powerful iPhone with 5G support and an OLED display.",
+    "category": "smartphones",
+    "image": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcRQHnzquC7XRlHVpL6wongnD4Okv0_IObW65Y02GP-4uAKKSqnKRg3Npwdozf63wbLwBURYu8PYftJ_oKLPp58Vcflj7eGukjmpkWcwPT5DBe6UC6Q2Mtec",
+    "rating": {
+      "rate": 4.6,
+      "count": 400
+    }
+  },
+  {
+    "id": 71,
+    "title": "Samsung Galaxy M32",
+    "price": 249.99,
+    "description": "Budget phone with a Super AMOLED display and large battery.",
+    "category": "smartphones",
+    "image": "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcTzZTCkN6jF0t23Vj-nmYFkBB6DcfDQjm9uxoa5fCHj-EiHXvIbt-LU0gxQ8qZdxYxtqcnYUaT2uN-r20VNvR0mzavyK1rEjMObALdnYDlaqIh81iJhr6TiTg",
+    "rating": {
+      "rate": 4.2,
+      "count": 200
+    }
+  },
+  {
+    "id": 72,
+    "title": "Realme Narzo 30 Pro",
+    "price": 239.99,
+    "description": "Affordable 5G phone with a large display and good performance.",
+    "category": "smartphones",
+    "image": "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcTHwDGXxwY0LMOSxR9QTIY_AJmWnk1_MPXpAOncrZo15EYvHCbfmP6xZ1OdpYuqc1Wk4fSpoA-jLqybfW0uthS3rz_EojhTaF59AiJBpUhy-VHU_-ClWl9Bxg",
+    "rating": {
+      "rate": 4.3,
+      "count": 180
+    }
+  },
+  {
+    "id": 73,
+    "title": "Xiaomi Poco X3 Pro",
+    "price": 249.00,
+    "description": "Mid-range phone with excellent performance and a large battery.",
+    "category": "smartphones",
+    "image": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcTQ3b8_rcocnEK60SJJHBPdLORDr7d9SezQFqnvpCd8zuTze7K2TWTy6SlebaOZJ5kqnh7kgADuP0_82xA3OLy_ARNJN1OH1w",
+    "rating": {
+      "rate": 4.5,
+      "count": 220
+    }
+  },
+  {
+    "id": 74,
+    "title": "Huawei P40 Pro",
+    "price": 999.99,
+    "description": "Premium smartphone with a Leica quad-camera setup and 5G support.",
+    "category": "smartphones",
+    "image": "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcRfB-zy-begLOJz9dwmwJqdp1vDTDSjItthm6XZj7AHmd0mdBfJT7Iyzdi-lLin8Z46ud2wkZ9YlLdGuFzb5qA9lMCaClfdgnhEy_oBWFpGzFOPR-fPIYe-",
+    "rating": {
+      "rate": 4.6,
+      "count": 180
+    }
+  },
+  {
+    "id": 75,
+    "title": "Samsung Galaxy A72",
+    "price": 499.99,
+    "description": "Mid-range smartphone with a large AMOLED display and good camera setup.",
+    "category": "smartphones",
+    "image": "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcQhplgbH3gPTvbjc0R2jKoo9_HHJlZ8sl6ZM7_AV2wVWKg-5ey-h3wsJIhOP3yFOhURD8Cth_AAtUDS0nBnEWgogz0Sk61Csw",
+    "rating": {
+      "rate": 4.4,
+      "count": 230
+    }
+  },
+{
+    "id": 76,
+    "title": "Apple MacBook Air (M1, 2020)",
+    "price": 999.99,
+    "description": "Lightweight laptop with Apple's M1 chip for high performance and energy efficiency.",
+    "category": "laptops",
+    "image": "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcSLl0MWutnqkN657j913PAvWPH7sO4KB0ia1GvOHe7VH5NGfV5HSvBuBEjLAJquYy7G5mdqGrbrd1sGZdNhNoUEGBDn33tLjOTEj85-FsI0hb7yNEOeATSNIsU",
+    "rating": {
+      "rate": 4.8,
+      "count": 450
+    }
+  },
+  {
+    "id": 77,
+    "title": "Dell XPS 13 (9310)",
+    "price": 1399.99,
+    "description": "Premium ultrabook with Intel's latest 11th Gen processors and a stunning display.",
+    "category": "laptops",
+    "image": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcQhYR6doV_PetTro6W1YWrve7MPuAuJrzhZURGHIz2ubdBV--iCDVRcp8wWragr2rfsTQyu-hdVWRM4eSMktbdVZ9x-WydToQ",
+    "rating": {
+      "rate": 4.7,
+      "count": 380
+    }
+  },
+  {
+    "id": 78,
+    "title": "HP Spectre x360 14",
+    "price": 1249.99,
+    "description": "Convertible 2-in-1 laptop with powerful specs and an elegant design.",
+    "category": "laptops",
+    "image": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcQ4R6N_mWcgO-sbCqClHj0FsXFlzK44m0lgsoBrD5W6WjluedvvdeDixza7wRjdTC_zMfbJkbjQcJ2b0cLRRwsIb0U0PztV5vdLUP3YrCAxoPQv96OAAABd",
+    "rating": {
+      "rate": 4.7,
+      "count": 350
+    }
+  },
+  {
+    "id": 79,
+    "title": "Lenovo ThinkPad X1 Carbon (9th Gen)",
+    "price": 1450.00,
+    "description": "Business laptop with top-tier performance, lightweight design, and long battery life.",
+    "category": "laptops",
+    "image": "https://p1-ofp.static.pub//fes/cms/2024/08/08/7awauyy7km5d1zq66pypo0ezc4h6f7268280.png",
+    "rating": {
+      "rate": 4.6,
+      "count": 420
+    }
+  },
+  {
+    "id": 80,
+    "title": "Asus ROG Zephyrus G14",
+    "price": 1499.00,
+    "description": "Compact gaming laptop with powerful specs, including AMD Ryzen 9 and NVIDIA GPU.",
+    "category": "laptops",
+    "image": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcTRkTi7C5_0MXrqvnUocxUwerrxlPlZBXA5H5wQI32t4-xMKTkRXRBNnnW3-vBjtvzzH45b9cfA45b6vUSQ1kKu7eib730L3-Yf20Ky_qrJaZbM53KFHobm",
+    "rating": {
+      "rate": 4.8,
+      "count": 300
+    }
+  },
+  {
+    "id": 81,
+    "title": "Microsoft Surface Laptop 4",
+    "price": 1299.99,
+    "description": "Sleek laptop with a high-resolution PixelSense touchscreen display and great battery life.",
+    "category": "laptops",
+    "image": "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcRhClkT4rwZ6EusKB-16ZeORI4osA45B4bryQrZZS1qt74X2UDBdfPWJ73_vVUvyLGVNJnoYMJGinUHq-hfPubMX12NcrXO3NsiO3HoVprdzyYe-FDzGY_kQzM",
+    "rating": {
+      "rate": 4.6,
+      "count": 280
+    }
+  },
+  {
+    "id": 82,
+    "title": "Acer Aspire 5",
+    "price": 549.00,
+    "description": "Affordable laptop with a Full HD display, Intel Core i5, and solid battery life.",
+    "category": "laptops",
+    "image": "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcRybYlVZik8MZjRUmJz0gUHY4wkPi-IjtxlrfGXtMSwBWUJDB2VRGWMPkp4f4_E6gQkdUEuPsUWrn9uSsnYuPKrF1sE1amZcIwRxuFDs6XrezzwCJXJ_GFi6Q",
+    "rating": {
+      "rate": 4.3,
+      "count": 320
+    }
+  },
+  {
+    "id": 83,
+    "title": "Apple MacBook Pro 16-inch (2021)",
+    "price": 2399.00,
+    "description": "Powerful MacBook with Apple M1 Pro chip, ideal for professional work like video editing.",
+    "category": "laptops",
+    "image": "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcRVGLk7jKUctZpD2e2qv1VvHEN6tzKrJSIiFwtxuelwfReHSxqv7mWvu7k-CUmkfUz1H72j7Ti_8szt3QjtOIvaL9_RJWuJmOehH1Zv5ZdcWx5tp3Lhq2kjSA",
+    "rating": {
+      "rate": 4.9,
+      "count": 400
+    }
+  },
+  {
+    "id": 84,
+    "title": "Dell Inspiron 15 5000",
+    "price": 749.99,
+    "description": "Mid-range laptop with Intel Core i7, 8GB RAM, and a 512GB SSD.",
+    "category": "laptops",
+    "image": "https://media-ik.croma.com/prod/https://media.croma.com/image/upload/v1724858615/Croma%20Assets/Computers%20Peripherals/Laptop/Images/306647_0_cdu0nd.png?tr=w-360",
+    "rating": {
+      "rate": 4.4,
+      "count": 250
+    }
+  },
+  {
+    "id": 85,
+    "title": "HP Pavilion x360 14",
+    "price": 799.99,
+    "description": "2-in-1 convertible laptop with touchscreen and a reliable Intel Core i5 processor.",
+    "category": "laptops",
+    "image": "https://vsprod.vijaysales.com/media/catalog/product/2/2/220211-image1.jpg?optimize=medium&fit=bounds&height=500&width=500",
+    "rating": {
+      "rate": 4.5,
+      "count": 270
+    }
+  },
+  {
+    "id": 86,
+    "title": "Lenovo Legion 5 Pro",
+    "price": 1399.00,
+    "description": "Gaming laptop with NVIDIA RTX graphics, AMD Ryzen 7, and a 165Hz display.",
+    "category": "laptops",
+    "image": "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcTfGLJbJqU42VAGv7WYdGNiV174DVz0iXpYw4FGUIrlVyHQ8OLkn-ba7gIGlZTi4LBSYQI0zImlnKXdzXzhWmWAzzYgCRso65cfEybZoajQwP-bMJqjB3Mlzw",
+    "rating": {
+      "rate": 4.7,
+      "count": 320
+    }
+  },
+  {
+    "id": 87,
+    "title": "Asus VivoBook 15",
+    "price": 499.00,
+    "description": "Affordable laptop with a 15.6-inch display, Intel Core i3, and a lightweight design.",
+    "category": "laptops",
+    "image": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcTAp1QG484QxBgWyc6bi5i2y1HrZWsqaDEj4LdAF68xug6UfzBgG3j4Isal6XQ2YC6do4_hO4O8XsdHgq2OniYAa1PQyYAXnJFSVmQ9m-iadbCurxsb1FfCfQk",
+    "rating": {
+      "rate": 4.2,
+      "count": 300
+    }
+  },
+  {
+    "id": 88,
+    "title": "MSI GE76 Raider",
+    "price": 1899.00,
+    "description": "Gaming laptop with Intel i9 processor, RTX 3080 GPU, and a 17.3-inch display.",
+    "category": "laptops",
+    "image": "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcShsxkYU0Q6d0zQTwtLnGH6SY5uIv9yi4iQ5Xd6LczK_id7zbXIyDHtUPh7YE3_OUIiTOzhoSCH-Cj7CCMze4W063klfQKMTSHyorTTa9Fm9MT5y9VdnsGhvw",
+    "rating": {
+      "rate": 4.8,
+      "count": 230
+    }
+  },
+  {
+    "id": 89,
+    "title": "Razer Blade 15",
+    "price": 1799.00,
+    "description": "Premium gaming laptop with RTX 3070 GPU, Intel Core i7, and 15.6-inch Full HD display.",
+    "category": "laptops",
+    "image": "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcTg_usbL1iQ_UrbiYxEy56HIcobQ4oXXImK-M9qLr4w0uWEq6HiNoYNUzVDdA41NoUC768HbGPMo7cPfyw55R1-3jCTTRn5ZwWV2yYFZNvtHFEgqLA3XQVk9Q",
+    "rating": {
+      "rate": 4.7,
+      "count": 250
+    }
+  },
+  {
+    "id": 90,
+    "title": "HP Elite Dragonfly",
+    "price": 1499.99,
+    "description": "Ultra-lightweight business laptop with Intel Core i7 and all-day battery life.",
+    "category": "laptops",
+    "image": "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcQuJouWtkTkOOosqm7i2aB_yQx5Fe2s4uEdLNl7yLSulYvKTpKnwqg4SZ3n2E_F8x0HC1HiAn81wa_1mN9_DyqT5fPeRgC_3WJBTT9LDHJJi-WncsrNuEcc",
+    "rating": {
+      "rate": 4.6,
+      "count": 270
+    }
+  },
+  {
+    "id": 91,
+    "title": "Apple MacBook Pro 13-inch (M1, 2020)",
+    "price": 1299.99,
+    "description": "MacBook Pro with Apple's M1 chip, offering exceptional performance and battery life.",
+    "category": "laptops",
+    "image": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcQnuihwPDdgUNJkQs99tjtDzwB-iDBJD7YoO-Dlojj5AxmQLYEUUKI0_hZ2rn1AMB-3UwRg93QQMKeDLSjSwrXlFDCB00iEvMMcT5J0aAKbJuXr7wL0QvMQtw",
+    "rating": {
+      "rate": 4.8,
+      "count": 350
+    }
+  },
+  {
+    "id": 92,
+    "title": "Dell G5 15 SE",
+    "price": 1099.00,
+    "description": "Gaming laptop with AMD Ryzen 7, Radeon RX 5600M graphics, and a 15.6-inch display.",
+    "category": "laptops",
+    "image": "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcRBhbI3gKQElkxykKydCsJs2UYfgpnhXjWexVAn6m-Uh0kHOW5WuFcu8TyBxUIU4XHcBNoLypUeIfcJcYa5a9Z7uHzUoGt2jWG0injYSnCKYt6G8mPdS4lsKQ",
+    "rating": {
+      "rate": 4.6,
+      "count": 180
+    }
+  },
+  {
+    "id": 93,
+    "title": "Acer Predator Helios 300",
+    "price": 1299.99,
+    "description": "High-performance gaming laptop with Intel Core i7, RTX 3060 GPU, and a 144Hz display.",
+    "category": "laptops",
+    "image": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcRY_hXESOyDSMG9usEBTuRDPqlcO1QMljT4IthhbB8o6Oq-mtNTzRN14lb_OeWHsRdrtvLY3knE4HtAgQhQ8o9YZg4ejLeUOJlh8iaRa6H8gUnaqFhtGov1",
+    "rating": {
+      "rate": 4.7,
+      "count": 290
+    }
+  },
+  {
+    "id": 94,
+    "title": "Asus ZenBook 13",
+    "price": 999.00,
+    "description": "Slim ultrabook with Intel Core i7, OLED display, and long-lasting battery.",
+    "category": "laptops",
+    "image": "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcQgQCtOIAQEhGG4ecj_qBiuLZ2_cRMIHdnNLX0SEZyTpvs9GLNNa6YI-JoqoWNqDAemf8Pk_QU3ZncOjRvOfcD1wJDm6G6lpLfujohyEElt7tzW1PnIgI1gXg",
+    "rating": {
+      "rate": 4.6,
+      "count": 220
+    }
+  },
+  {
+    "id": 95,
+    "title": "Lenovo IdeaPad 3",
+    "price": 449.00,
+    "description": "Budget-friendly laptop with Intel Core i3, 8GB RAM, and a 15.6-inch display.",
+    "category": "laptops",
+    "image": "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcQOCny3mylBVeY3IzEOhTb6kzrWo-d3VfzWcrvj6GJxHb-agv7ENypjnJbaV-XMU8d77ux_R3HU43quW43eEuy42_SelSEzXPHM7pU0E7Byp6mZ0L1qrzTr",
+    "rating": {
+      "rate": 4.2,
+      "count": 250
+    }
+  },
+  {
+    "id": 96,
+    "title": "HP Envy x360 15",
+    "price": 949.00,
+    "description": "Convertible laptop with Intel Core i7, full 360-degree rotation, and high-resolution display.",
+    "category": "laptops",
+    "image": "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcRx_IwKT_TJTMu3di8E3p5p7o5htoc13aAY2681x9hjmJmJ3EcEOukVO3BKrByuITwOfnG8nQW5ptunni5_96iV-GxhRhE0jHOXKL1tgs-VLDk2z14GY9ItKg",
+    "rating": {
+      "rate": 4.5,
+      "count": 230
+    }
+  },
+  {
+    "id": 97,
+    "title": "Samsung Galaxy Book Pro 360",
+    "price": 1299.99,
+    "description": "Sleek convertible laptop with a 15.6-inch AMOLED display and Intel Core i7.",
+    "category": "laptops",
+    "image": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcSVUx639TRBwHicILZUCvNMFxC2UtMMKhvLFmxKrTMPjq2ED49v4DqlSDuAaDlRdXVEtpzXf6Zzs4Bn_mIgj2iNZO8g_1LOL2a2COLPQ6P7",
+    "rating": {
+      "rate": 4.6,
+      "count": 190
+    }
+  },
+  {
+    "id": 98,
+    "title": "MSI GF63 Thin",
+    "price": 749.99,
+    "description": "Light gaming laptop with Intel Core i5, GTX 1650, and a 15.6-inch display.",
+    "category": "laptops",
+    "image": "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcSvZFcKPW8BJOj96uIbd50Eq0EGnr9T9CwfxGCwPuBHl0ZNTwAWw15J7IvrXpI5_y4ZxENUGH-tVdj9FqKA7fqG8S7eqWWa-Ct4G4b3DEc6-S6Ol9yF-3bthw",
+    "rating": {
+      "rate": 4.4,
+      "count": 210
+    }
+  },
+  {
+    "id": 99,
+    "title": "Gigabyte Aero 15",
+    "price": 1699.00,
+    "description": "High-end laptop with Intel i7, RTX 3070, and a 15.6-inch 4K OLED display.",
+    "category": "laptops",
+    "image": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcQZKZ1PGDV-MCRjn_ClKRJj_6roWQTAMvbivIrthXfa1tNqep5gkYyifaVxTto7IC9KWgnc2m2--m0f8xuXGc6IIILy2haP0N94vTSPI8G5loNtVks3lbZf",
+    "rating": {
+      "rate": 4.7,
+      "count": 180
+    }
+  },
+  {
+    "id": 100,
+    "title": "Apple MacBook Pro 14-inch (2021)",
+    "price": 1999.99,
+    "description": "Powerful MacBook with Apple's M1 Pro chip, ideal for creative professionals.",
+    "category": "laptops",
+    "image": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcQST5nsOep_j29c9IcSnbF9D3kJS00BHwxJ8PLqfYW2ZTjDf6zZ0dNDrWJiQ-IdypNG8HizkPI0H6prTnkWmkeQWtuq6TFhHnDlGLNEDKs0SbeYISzFIpZijaA",
+    "rating": {
+      "rate": 4.8,
+      "count": 300
+    }
+  },
+{
+    "id": 101,
+    "title": "LEGO Star Wars: The Mandalorian The Razor Crest",
+    "price": 129.99,
+    "description": "A buildable LEGO set featuring The Razor Crest from Star Wars: The Mandalorian.",
+    "category": "kids",
+    "image": "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcQqsFD-AE-UBaCwpRi-V8UUb9rsDcPFBQFH2HlaoG_5KW2OEuaG2DJEg9XOIIAOg5C3U_aAtHBeFVfLf3r88_1NrVc7IPLLS7UayRKeInr_QzmdpeO10KvsLg",
+    "rating": {
+      "rate": 4.9,
+      "count": 150
+    }
+  },
+  {
+    "id": 102,
+    "title": "Barbie Dreamhouse Dollhouse",
+    "price": 199.99,
+    "description": "A fully furnished dreamhouse for Barbie dolls, with lights, sounds, and furniture.",
+    "category": "kids",
+    "image": "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcRNosg4o8V_v_RtFLC5UE5Ctdcsqcnwi1rutxC7LpRsqZz9vDyxcTxm-iKBHpThLB7umJucW4c_tZ51tL-5iqdTXXIXWf93lv0U5ARQ-X-P7s6ALq3aOTeD2dU",
+    "rating": {
+      "rate": 4.8,
+      "count": 180
+    }
+  },
+  {
+    "id": 103,
+    "title": "Fisher-Price Laugh & Learn Smart Stages Chair",
+    "price": 49.99,
+    "description": "Interactive chair with music, lights, and educational content for toddlers.",
+    "category": "kids",
+    "image": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcQKeLeh6PW2_gYr5J82Jqm2VRv-xfzxb6qaO1VN81QZUOUv8yG6dUSMtr9LQ4DRqicbU0PrAVtzqka31msj4lp0QV1lXC8xHrflafM-j1DopkY0z_RKnSyNxg",
+    "rating": {
+      "rate": 4.7,
+      "count": 220
+    }
+  },
+  {
+    "id": 104,
+    "title": "Hot Wheels 50-Car Pack",
+    "price": 64.99,
+    "description": "A collection of 50 Hot Wheels cars for endless racing fun.",
+    "category": "kids",
+    "image": "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcT4YkTbuq6DngRs3F5iwCY6JShV6Hh3gqYkHJvzGXgZJfgnx-YxmsP9eG2jjptumdBvacUuJL6l4DsyeipcPkAMi0xBMugh8RqFYRRZ4X7ESFW9IIQgVvuTIa0",
+    "rating": {
+      "rate": 4.7,
+      "count": 250
+    }
+  },
+  {
+    "id": 105,
+    "title": "VTech Kidizoom Camera",
+    "price": 59.99,
+    "description": "A kid-friendly camera with built-in games and photo effects.",
+    "category": "kids",
+    "image": "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcSZ_InkWGBE7cCjNK-_UFR9cTVhBqwZtSRqmyrnkouJfOSOxlthC3OjbNIPxt34DA1jwlzhVaOTgHYHJLNWNEf4_cY6TcTd9vdTjQUWUXIC3l0uFH7hBPlTJA",
+    "rating": {
+      "rate": 4.6,
+      "count": 300
+    }
+  },
+  {
+    "id": 106,
+    "title": "Fisher-Price Imaginext Batcave",
+    "price": 49.99,
+    "description": "A fun and interactive playset with Batman figures and accessories.",
+    "category": "kids",
+    "image": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcT0qk_8Z4KUC8bDiJwjqkJBWUytsaujIs6R6JUcUa_1IU8kiAASEkShJ57dJ5RHhDhL2geGoPb1TSuUazRgYGmtZnVaFE-8f11r0UxmSu21RySsK7nvrqEuLg",
+    "rating": {
+      "rate": 4.8,
+      "count": 200
+    }
+  },
+  {
+    "id": 107,
+    "title": "LEGO City Police Station",
+    "price": 69.99,
+    "description": "Build and play with a LEGO police station featuring police officers, vehicles, and accessories.",
+    "category": "kids",
+    "image": "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcRMnG6iDmYkbsGBYvGj0twZRPZCKZl8kiRoUe3scCwtHagsWkQVA4QNpJ02p1Xx18EGGW8KNmBUwQQXt6A3ouV-6HU1_EyaTPQOtGzriNvivODfAAk7HSAO",
+    "rating": {
+      "rate": 4.8,
+      "count": 230
+    }
+  },
+  {
+    "id": 108,
+    "title": "LeapFrog LeapPad Academy Kids Tablet",
+    "price": 79.99,
+    "description": "A kids' tablet with a variety of educational games, apps, and books.",
+    "category": "kids",
+    "image": "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcSU-bU1CU0v7xWM5XjbEGn5m-pUhNnSQkmd8rEnceF_tNKotawnDUNpg2RZO45GDTfkPBtPveCN_5Ac3D53GNuAfTTgFQs-POja38OuuqOO2FO97jDTXG-D",
+    "rating": {
+      "rate": 4.7,
+      "count": 180
+    }
+  },
+  {
+    "id": 109,
+    "title": "Play-Doh Kitchen Creations Burger Barbecue Set",
+    "price": 19.99,
+    "description": "Create your own burger and barbecue with this fun Play-Doh set.",
+    "category": "kids",
+    "image": "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcSoc_VNo_n9MScD_wOb312pS91FogSmOOvHAyTicinop88T7YriDP7GHUGitCLMpxbmYNu_YtYLLSgtyjALjUkEfG_zD5mvUHF3DDKw8JSUQviIzypZzrZwBg",
+    "rating": {
+      "rate": 4.6,
+      "count": 250
+    }
+  },
+  {
+    "id": 110,
+    "title": "NERF Elite 2.0 Shockwave RD-15 Blaster",
+    "price": 29.99,
+    "description": "A high-performance blaster with a rotating drum and 15-dart capacity.",
+    "category": "kids",
+    "image": "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcQ-nvvrIiiQPcVJD9LBEEP-asBe5RFR8baRy3-jhpJBQGExuvqYIGi491rHe4mE3vwxcPZ57x7abm3KPmIcLADSXgIFJygaxeQZ8WlcVKu9euuBLuEifQL1",
+    "rating": {
+      "rate": 4.7,
+      "count": 290
+    }
+  },
+  {
+    "id": 111,
+    "title": "Disney Princess Royal Dream Castle Playset",
+    "price": 99.99,
+    "description": "A magical castle playset with princess figures and accessories.",
+    "category": "kids",
+    "image": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcSzlo4Lyuyb9s1cGKvNjEqsY-9tN20nLSfY-K_JH5qHEwgDy6GmkGOsqQJZrFvP-hEPYIb9B-A1AUr2fGdDfOgZ9ryWXC5bA-9M1UjD9LVUl1STuFbaCRa7",
+    "rating": {
+      "rate": 4.6,
+      "count": 210
+    }
+  },
+  {
+    "id": 112,
+    "title": "Little Tikes Cozy Coupe",
+    "price": 59.99,
+    "description": "A toddler-friendly ride-on car with fun features like a working horn.",
+    "category": "kids",
+    "image": "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcSWLBqfk0RtvIoTS8lz68vgQq723JgeohjoccyIf-PDqWs5HQKR6ZRPJITtXSXFe3-9GzWRo3tMC-uF7H6YRII30XrN2z1sg71qHwU5gWD2_Zn56lLR34o2",
+    "rating": {
+      "rate": 4.8,
+      "count": 300
+    }
+  },
+  {
+    "id": 113,
+    "title": "Melissa & Doug Wooden Railway Set",
+    "price": 79.99,
+    "description": "A large wooden train set with tracks, trains, and accessories for imaginative play.",
+    "category": "kids",
+    "image": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcRS7qItNiGRhC_5JTGQa0WwkAjJaercBwjdOE2a0b0SR_URXZexuElFBeQhuyuq6Imn72U4hs1hFRS3j7QGEa40gKz3979mnsxcdQBmX9NyrzPZjATHXzJl",
+    "rating": {
+      "rate": 4.9,
+      "count": 250
+    }
+  },
+  {
+    "id": 114,
+    "title": "Fisher-Price Thomas & Friends TrackMaster Set",
+    "price": 49.99,
+    "description": "A battery-powered train set with Thomas the Tank Engine and friends.",
+    "category": "kids",
+    "image": "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcSqwJpWd5XmEJ9XQpgqg6JxWSoiJaa_KTN3K1uoCTdzZXAMc3nzMTf8TyFRHSWMgIX5zWEONdY9gazigSbJeQ4hhFGQurPT_3-uapLg8KbJvRFrLVpu1ASytA",
+    "rating": {
+      "rate": 4.7,
+      "count": 220
+    }
+  },
+  {
+    "id": 115,
+    "title": "Razor A Kick Scooter",
+    "price": 39.99,
+    "description": "A classic kick scooter for kids with smooth rides and adjustable handlebars.",
+    "category": "kids",
+    "image": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcSAvAqkJdWMfOd-5lNm6mzIvhFmFHDRp4uHz8YABJPzIuXu3QKDELxGCIOBsuE6xKq59U9x6bX3SoMa6cRL1kxLI1s2f8kc1eYwksX1BIkG52MKwfuMuj89KA",
+    "rating": {
+      "rate": 4.6,
+      "count": 270
+    }
+  },
+  {
+    "id": 116,
+    "title": "VTech Switch & Go Dinos Turbo T-Rex",
+    "price": 19.99,
+    "description": "An interactive dinosaur toy that switches into a vehicle and makes sounds.",
+    "category": "kids",
+    "image": "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcQiRysdUKFG7rg4yDby4sZA_6x6vnV-rH8VMlBZzgY9X4PNjTzoS-01gAWKDznUu30VtEgBCV8bboMPPWsBORGh_Uf5tiCPMLrhfqgb-5Te90TKcXeAVyPINw",
+    "rating": {
+      "rate": 4.5,
+      "count": 210
+    }
+  },
+  {
+    "id": 117,
+    "title": "Fisher-Price Rock-a-Stack",
+    "price": 9.99,
+    "description": "Classic stacking toy for toddlers to help with hand-eye coordination and motor skills.",
+    "category": "kids",
+    "image": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcRI7EQ0meZCCZc1EKloe2hVm_NuvA4jPR43Ecqob70voZD7wjKwLusreeKx2e3m3bqWjeUeCL15EYP6YrV1Q4Q9jwux5hv9wJ9iGSIKl6Ez4-wg3IVWFNH0",
+    "rating": {
+      "rate": 4.8,
+      "count": 300
+    }
+  },
+  {
+    "id": 118,
+    "title": "Hasbro Gaming Jenga",
+    "price": 14.99,
+    "description": "The classic block-stacking game for kids and adults that requires skill and balance.",
+    "category": "kids",
+    "image": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcS-SZeT_POGU0LAPv_BgHH_TnRq0rdW4OLAAefGmLxC1dyr-opznh-VxsAevLu-keU71ch3KJkst9hmVltOqtprtF_COO8j8NTOpZh--Ikleb95xZ4cH27D",
+    "rating": {
+      "rate": 4.7,
+      "count": 350
+    }
+  },
+  {
+    "id": 119,
+    "title": "Disney Pixar Cars 3: Ultimate Florida Speedway Track Set",
+    "price": 49.99,
+    "description": "An exciting race track set featuring cars from Disney Pixar's Cars 3 movie.",
+    "category": "kids",
+    "image": "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcTLiSirgD86oLPFQ0t3wvhYvB5kUmsNaZg8DkjcsSooa5e9Kbbm09COM03ytpUczwuyX__xQTCavR9D9moNwpcqn5Jh2I4eI9qtVzOHZjgEj6ZzwVutwU81",
+    "rating": {
+      "rate": 4.6,
+      "count": 220
+    }
+  },
+  {
+    "id": 120,
+    "title": "Tamagotchi Original Virtual Pet",
+    "price": 14.99,
+    "description": "The classic virtual pet game where kids can raise, care for, and play with their Tamagotchi.",
+    "category": "kids",
+    "image": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcQ5i29-O-iuOhe67ZUz6KPVTI_obyYRs75HYIBRl5hnTmMuf1YEIl1bbE2EfkvidpG2IihSfVrsr0vsnmXKiG2eQEKe4CAk1yd6DZb2fxhSpQTZS5GwjPcD",
+    "rating": {
+      "rate": 4.6,
+      "count": 270
+    }
+  },
+  {
+    "id": 121,
+    "title": "Spin Master Air Hogs Supernova",
+    "price": 49.99,
+    "description": "A gravity-defying flying drone toy that kids can control with their hands.",
+    "category": "kids",
+    "image": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcTQiIOXlOwZJG9Uj6QPCMtwGXq2QmUylFH1GIFc3AdGLQ-IKUquBDTF1g8nGpio9siC264d6hjfSDR57Zc78A3LK-NV6FhlqYEyUN__No5Yi6B8uomnpNAX",
+    "rating": {
+      "rate": 4.7,
+      "count": 210
+    }
+  },
+  {
+    "id": 122,
+    "title": "L.O.L. Surprise! O.M.G. Dolls",
+    "price": 24.99,
+    "description": "Collectible fashion dolls with stunning outfits and accessories.",
+    "category": "kids",
+    "image": "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcQqSOGgxjHSLczuvmoMgwq7xlmVuZiDVfU28K8XNOHa8mwk-xqCbS9c3Bo4AvkJ2UD_JhgxKxuLowk7oZKLCRG__ExkBtuLCb-lNFUkKuaJu0Vxi2DozkZnRw",
+    "rating": {
+      "rate": 4.7,
+      "count": 240
+    }
+  },
+  {
+    "id": 123,
+    "title": "Hot Wheels Track Builder System",
+    "price": 34.99,
+    "description": "Create your own custom Hot Wheels tracks with this creative set.",
+    "category": "kids",
+    "image": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcTTrvELub3Wkk6hcZV6vL1_os6xfQ8nRFPdxIKD9wp-qPdjCsa3cwPEpPGWeHASFV2AJPTt-m1-JWSgSvSHVTxZAFa5r5LTxiX61y28OuC8",
+    "rating": {
+      "rate": 4.7,
+      "count": 250
+    }
+  },
+  {
+    "id": 124,
+    "title": "VTech Rock and Bop Music Player",
+    "price": 29.99,
+    "description": "A musical toy with lights and fun sound effects designed for younger kids.",
+    "category": "kids",
+    "image": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcR3u7NAdFr1FWt92QhLB-nfPeVC4-xpu3tyDzSA5oAuP0nBO2e7CsqGsXWyTcwQxkA-5eDs_RqDJFmcSZqsHmTN3LAPYrfzQvLvsIVfkvpiHOd1YSIfmoSL",
+    "rating": {
+      "rate": 4.6,
+      "count": 220
+    }
+  },
+  {
+    "id": 125,
+    "title": "Play-Doh Ultimate Rainbow Pack",
+    "price": 19.99,
+    "description": "A rainbow set of Play-Doh to encourage creativity and imaginative play.",
+    "category": "kids",
+    "image": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcRornhvJ18Tk51W3-aLDmfxsbBMK61z8oYnaTF-5Y88qpXWAbfbBNcMGmAC0TXIuuPqsmKYKqm-SKE-UhC9pAIEMEKyiP-VMsV0C1hYJDlYBTcYxPP2sIJs",
+    "rating": {
+      "rate": 4.8,
+      "count": 230
+    }
+  },
+{
+    "id": 126,
+    "title": "Organic Whole Wheat Flour",
+    "price": 5.99,
+    "description": "100% organic whole wheat flour for all your baking needs.",
+    "category": "grocery",
+    "image": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcQgIY1ZnTfmh_UaUaiWxogpXrJb95QQTcPsSz_PU8xoZuYl3aL8mkQiHVP8tj4jInftvSVIDM5nLGMEcmR3spUIzKDAMF5jRESOgXBSqmwEjL7yyMebYzvv",
+    "rating": {
+      "rate": 4.7,
+      "count": 180
+    }
+  },
+  {
+    "id": 127,
+    "title": "Almonds - Raw, Unsalted",
+    "price": 9.99,
+    "description": "High-quality raw almonds, perfect for snacking or cooking.",
+    "category": "grocery",
+    "image": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcRpDRo53Rup-mLNUrPJ9A_k21hUAuUynePMoHJ2E6MRMU2cM0qx-1BUh0cvB8aDqAw2jLBjDUSALpjaynED71HgxbsgaUBcXiSQT42L-exFCx9ZkZzTw16A",
+    "rating": {
+      "rate": 4.8,
+      "count": 250
+    }
+  },
+  {
+    "id": 128,
+    "title": "Organic Extra Virgin Olive Oil",
+    "price": 15.99,
+    "description": "Cold-pressed organic olive oil, perfect for cooking or salad dressings.",
+    "category": "grocery",
+    "image": "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcSPHTM9dXIEBOtpe3i4qp50_odNQPdwDr29qv31HjyJDMmbtSW89EQZYuxcALqrxoSd422ROapBPG8kKW3mg0hUN1wKEuvW2nXcqZDUjp8kRhimwqn54_KWfQ",
+    "rating": {
+      "rate": 4.9,
+      "count": 300
+    }
+  },
+  {
+    "id": 129,
+    "title": "Basmati Rice - 10 lb",
+    "price": 14.99,
+    "description": "Premium long-grain basmati rice, ideal for making curries and biryanis.",
+    "category": "grocery",
+    "image": "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcR2jFcuWIbuw9RVONbPoUtYWDm6AY0XcFq7xiJYNMg9201f8FJAVmENOeKZFDqEyb5Ckbd1y7yhRU12b4I2ES5idm0cAt3XhCB0VE-CV38Wpche5EaVw1ZMV6s",
+    "rating": {
+      "rate": 4.7,
+      "count": 220
+    }
+  },
+  {
+    "id": 130,
+    "title": "Organic Green Tea Bags",
+    "price": 4.99,
+    "description": "100% organic green tea bags, known for their antioxidants and refreshing taste.",
+    "category": "grocery",
+    "image": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcQNTOBN9BaUWvh7GiRxJkslQ1npPJlTQE06Tdz5cqKk-3y7Y1vkxfDU9BqObNMz9DVMfLL2rNlsmH40nR5a7VxEMwy9bvY_TCccs9q9UgBoKRXNtZ_C-HZV9HA",
+    "rating": {
+      "rate": 4.6,
+      "count": 150
+    }
+  },
+  {
+    "id": 131,
+    "title": "Coconut Oil - Virgin",
+    "price": 7.99,
+    "description": "Virgin coconut oil, ideal for cooking and skin care.",
+    "category": "grocery",
+    "image": "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcQSXYpkIUIwmCPxHJoEaQ7AQCMeA1l6_Ix8anmo6Tk8LVpVPdNKIZREvlmYuWe_rif621LDA_AaJe83aJD55RxK3mvBWKq6snxMJGICzO8b6M9_ECy2KT1n",
+    "rating": {
+      "rate": 4.8,
+      "count": 200
+    }
+  },
+  {
+    "id": 132,
+    "title": "Pasta Penne Rigate",
+    "price": 2.99,
+    "description": "Classic penne rigate pasta, great for a variety of Italian dishes.",
+    "category": "grocery",
+    "image": "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcQXZSFlKffQHH4pC0OE0WiM5JVQ0RCikavpHmu8zvVYY7m-4z5_LJK0MKmtDEvMn7xFoLbMQf--A9uBb98ekO40BHXLsPv-BgQmwyx3I8u0mp8IqU8aiq5X",
+    "rating": {
+      "rate": 4.7,
+      "count": 180
+    }
+  },
+  {
+    "id": 133,
+    "title": "Tomato Ketchup - 24 oz",
+    "price": 3.49,
+    "description": "Classic tomato ketchup, perfect for burgers, fries, and more.",
+    "category": "grocery",
+    "image": "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcTPvr3bjOl2AVf6RFOX4QQFu-Tx0mgMxT1hMf3b6-mv9ti9aM9_YZAmk08b7VzVnyW3YjSwNEz77-62Wl-IMnL1XkewIZ6cyEvLJkfoG7eD9bnAoacQO2s9Zss",
+    "rating": {
+      "rate": 4.6,
+      "count": 250
+    }
+  },
+  {
+    "id": 134,
+    "title": "Cheddar Cheese - 8 oz",
+    "price": 5.49,
+    "description": "Sharp cheddar cheese, perfect for sandwiches, salads, or as a snack.",
+    "category": "grocery",
+    "image": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcSk6hkYpl4RxQjkhFmlq-Bu6C-GInsKBlWmYn3YTls1JDwd0jXLSW7sWELou8pWbPtViC5oYlzUVBAyypTHs8-pJP61tC1m287A7J7LJehrrE9HH3VpXpP1Bg",
+    "rating": {
+      "rate": 4.8,
+      "count": 220
+    }
+  },
+  {
+    "id": 135,
+    "title": "Whole Milk - 1 Gallon",
+    "price": 3.69,
+    "description": "Fresh whole milk, ideal for drinking or adding to your favorite recipes.",
+    "category": "grocery",
+    "image": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcT04KW_mEDyF9b-vlpCIg-8DyzuAhkZRyMArid54UMpc_NA-UAFqwSREYtLhI4rM-JKRuTeoJ44V3iWGpefGMmNeNbKIE2zoZR8-oLVPzFa4EEE64X_6JlJzQ",
+    "rating": {
+      "rate": 4.7,
+      "count": 280
+    }
+  },
+  {
+    "id": 136,
+    "title": "Organic Honey - 16 oz",
+    "price": 8.99,
+    "description": "Pure organic honey, perfect for sweetening drinks or baking.",
+    "category": "grocery",
+    "image": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcTN0DUA1k43WJVva3HEUbJJioMOJDrDAkxl7RVu85JMwkDAFcFC02pZ5NvCBYNVh8TlKQYuZMZ-cmhn4EdSxMo8KsvnupOPedyGpw31mZKe_7CsbrXJ076Ejw",
+    "rating": {
+      "rate": 4.9,
+      "count": 250
+    }
+  },
+  {
+    "id": 137,
+    "title": "Bananas - 1 Bunch",
+    "price": 2.49,
+    "description": "Fresh bananas, a healthy and delicious snack.",
+    "category": "grocery",
+    "image": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcTh7pH6g9EbqRysxMZJWb8RywmjRufTQKH4V7eSOT834bJAfNxa51QM7nu87ByqjPqlJcJmwrgxJvWLF5aJUHTjDiutXq6m",
+    "rating": {
+      "rate": 4.8,
+      "count": 300
+    }
+  },
+  {
+    "id": 138,
+    "title": "Organic Avocados - 2 Pack",
+    "price": 4.99,
+    "description": "Two ripe organic avocados, perfect for guacamole or salads.",
+    "category": "grocery",
+    "image": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcTsch1MC1LjyRHvy4UE1ju_FVcTYzg368Ax69ZLvP9U-WAHnt5y-WRdOWf6TRsaEElABf8wEwwvLBObq-U9s6WLTZK0M5vollkdGK9jcczuuXp19u0RKPjYaQ",
+    "rating": {
+      "rate": 4.7,
+      "count": 220
+    }
+  },
+  {
+    "id": 139,
+    "title": "Frozen Strawberries - 16 oz",
+    "price": 3.99,
+    "description": "Frozen strawberries, perfect for smoothies, desserts, or baking.",
+    "category": "grocery",
+    "image": "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcQowNONyuHRvlw_DPgD3_Ng8mwD9IwVpNY4iZEXkEf8q6oMhf_N2vRvyDg3mAUrmNyRCTfNsH50PtNTBMgpKoUDj1zExDSvWTMd0p9S6ooA0tD9Mfmg-eCAkA",
+    "rating": {
+      "rate": 4.6,
+      "count": 200
+    }
+  },
+  {
+    "id": 140,
+    "title": "Whole Wheat Bread - 1 Loaf",
+    "price": 2.99,
+    "description": "Fresh whole wheat bread, perfect for sandwiches or toasting.",
+    "category": "grocery",
+    "image": "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcT_vBebXPOZE8xiGr9OGRn6qkJ-9cVxOB4fqBt4Hlg9KYowBGqNrU7XY5_rewdqFnxH8-xXCKMzk-5KVtHPW0ANJod2y5XZwMpQbCy61vQdy178Pg-q0KWTkaYy",
+    "rating": {
+      "rate": 4.8,
+      "count": 260
+    }
+  },
+  {
+    "id": 141,
+    "title": "Organic Spinach - 8 oz",
+    "price": 2.99,
+    "description": "Fresh organic spinach, ideal for salads, smoothies, or cooking.",
+    "category": "grocery",
+    "image": "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcTITimnJZLAVXrZeXph82mX6YomPcnqMUdgDXRYfM-oTStScUO2PatXQIYMIsbL5A8Md_pBmZ7RXHoovrzwwtrMNPGfBiaScYWMEOiNNZsiiWs1agWJ44xK",
+    "rating": {
+      "rate": 4.7,
+      "count": 210
+    }
+  },
+  {
+    "id": 142,
+    "title": "Organic Carrots - 1 lb",
+    "price": 1.99,
+    "description": "Fresh organic carrots, great for snacking or cooking.",
+    "category": "grocery",
+    "image": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcQswb75yxUBSY6tHv__HPGbskTxFXb0Ab0QqxhOCt2tdEZkRmKBcqS2Jm_PbRdbu4kmXogOZBCae_uApfJam_Fcf37mcjHhCDhKd10cZPNWk_BXDyHP6dty",
+    "rating": {
+      "rate": 4.8,
+      "count": 240
+    }
+  },
+  {
+    "id": 143,
+    "title": "Garlic - 1 Bulb",
+    "price": 0.99,
+    "description": "Fresh garlic bulb, perfect for seasoning and cooking.",
+    "category": "grocery",
+    "image": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcSz4lnC5qhENPebxHll2fMvSF26gzkXzL4qKNYkW0ijxGpd-wl7tUDHvXRNO8yEhPRGIjs7VY0rj28seHDXwGgeSfel8E40BXnYYEcwDGw__LVUhEMas2eV",
+    "rating": {
+      "rate": 4.6,
+      "count": 270
+    }
+  },
+  {
+    "id": 144,
+    "title": "Sweet Potatoes - 2 lb",
+    "price": 3.49,
+    "description": "Fresh sweet potatoes, ideal for baking, roasting, or mashing.",
+    "category": "grocery",
+    "image": "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcTdEEDL5B3yxBQKhFNxDszmAQZWu_WXnqGeFdcpRlTwSQSNVgbiPjMWTxPP3vTpfb-YUeQEtUn6_iY1337dUQ8Dfq4XSyiTZhP24gATLmHpwe6QuOtgQmzB",
+    "rating": {
+      "rate": 4.7,
+      "count": 190
+    }
+  },
+  {
+    "id": 145,
+    "title": "Organic Cucumbers - 2 Pack",
+    "price": 2.49,
+    "description": "Fresh organic cucumbers, perfect for salads or sandwiches.",
+    "category": "grocery",
+    "image": "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcT8nSR33A5azYA-9kblq1pb9IZzb-RJ1jlQv6TG34TahbYeD-6Z2S2Xqpm3UQZeRWw7bmTv3-ZKgZhH50WUSGmZ59KeP2bn7qVsNTZ1KvBTdvF3y6C91sx0",
+    "rating": {
+      "rate": 4.7,
+      "count": 210
+    }
+  },
+  {
+    "id": 146,
+    "title": "Chobani Greek Yogurt - 32 oz",
+    "price": 5.49,
+    "description": "Creamy and thick Greek yogurt, available in various flavors.",
+    "category": "grocery",
+    "image": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcTs7qSrgKB7QkW2UWZ3bC4mJMFukz-IkqgRMyc9tZHSG9nk1Cfctb4le8R-uyVNkkKhhDm8Vz7oz9WiZ5E9_ub6uOjcBZ9KzwLMsuoIK9hVafHrufrg4XYw",
+    "rating": {
+      "rate": 4.8,
+      "count": 280
+    }
+  },
+  {
+    "id": 147,
+    "title": "Brown Sugar - 2 lb",
+    "price": 1.99,
+    "description": "Sweet and rich brown sugar, perfect for baking and cooking.",
+    "category": "grocery",
+    "image": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcShBlMCDXb8DjOCsFYXZ1d_oDNFagzsmzXuGTh98EN9vKGjlAJEe628s8mJ9y12JQM1epZokF5toaDN2NboMx_m6HMt2oQu09Hg7ydmu170R-Q65Amv9lYR7g",
+    "rating": {
+      "rate": 4.7,
+      "count": 230
+    }
+  },
+  {
+    "id": 148,
+    "title": "Whole Almond Butter - 16 oz",
+    "price": 7.99,
+    "description": "All-natural almond butter, a healthy alternative to peanut butter.",
+    "category": "grocery",
+    "image": "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcSJKQZipHyr3thP0tB-XJLgR2fyxVLzlXIWYtSBQwSscNySejlCbqOOQGvQU1v5xcHuOCeZyYBZGdTLfJ33CqZeQKIVx38Zzu1lz2bWx-g",
+    "rating": {
+      "rate": 4.9,
+      "count": 210
+    }
+  },
+  {
+    "id": 149,
+    "title": "Canned Chickpeas - 15 oz",
+    "price": 1.49,
+    "description": "Canned chickpeas, perfect for making hummus or adding to soups and salads.",
+    "category": "grocery",
+    "image": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcQLBbJ8NwQXhxq3Nd6c6EK2bPA5ozGxjC6D9lGHVX9WlAE6SWrW7LF_w9dsJZmx3T7tdhkpmIHc_d3ofJ4uqMcfIf4qIy0G13EyRj3yIYB9mDNfuo-OcNrk",
+    "rating": {
+      "rate": 4.6,
+      "count": 250
+    }
+  },
+  {
+    "id": 150,
+    "title": "Oatmeal - 18 oz",
+    "price": 2.49,
+    "description": "Whole grain oatmeal, perfect for a healthy breakfast.",
+    "category": "grocery",
+    "image": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcRGgsy4vbiHofqEa5t5XF9JhF647TojPNlHPYCll3VFN6umr8n_lA1zGZksVqJMLkTZuJvhP0KCNsWB842VhTFUr4ZKcY1QR8qo9_Kjt2wxJm3vRGpYUjQvnl0",
+    "rating": {
+      "rate": 4.7,
+      "count": 190
+    }
+  }
+]

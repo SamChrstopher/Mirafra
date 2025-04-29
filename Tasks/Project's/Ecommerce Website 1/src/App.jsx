@@ -1,32 +1,50 @@
 import React, { useState, useEffect, useRef } from "react";
+import db from "./db.json";
 import "./App.css";
 
 function App() {
   const [apiData, setApiData] = useState([]);
-  const [searchItem, setSearchItem] = useState("");
   const [filteredData, setFilteredData] = useState([]);
+  const [searchItem, setSearchItem] = useState("");
+  const [categories, setCategories] = useState([]);
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [cartItems, setCartItems] = useState([]);
   const [isCartOpen, setIsCartOpen] = useState(false);
-  const printRef = useRef();
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
-  //User Authentication
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [showAuthModal, setShowAuthModal] = useState(true);
   const [isRegister, setIsRegister] = useState(false);
   const [userProfilePic, setUserProfilePic] = useState(null);
-  // Store registered user data
   const [registeredUser, setRegisteredUser] = useState(null);
   const [errorMessage, setErrorMessage] = useState("");
 
+  const [showHeader, setShowHeader] = useState(true);
+  const [searchQuery, setSearchQuery] = useState("");
+
+  const printRef = useRef();
+
   useEffect(() => {
-    fetch("https://fakestoreapi.com/products")
-      .then((response) => response.json())
-      .then((data) => {
-        setApiData(data);
-        setFilteredData(data);
-      });
+    // Use your local db.json data
+    const fetchProducts = async () => {
+      try {
+        const localData = db; // Already imported
+        setApiData(localData);
+        setFilteredData(localData);
+
+        // Extract unique categories
+        const uniqueCategories = [
+          ...new Set(localData.map((item) => item.category)),
+        ];
+        setCategories(uniqueCategories);
+      } catch (error) {
+        console.error("Error loading local products:", error);
+      }
+    };
+
+    fetchProducts();
+
+    // User authentication check
     const storedUser = localStorage.getItem("user");
     if (storedUser) {
       const parsedUser = JSON.parse(storedUser);
@@ -60,6 +78,7 @@ function App() {
     } else {
       setErrorMessage("❌ Please enter the correct email or password.");
     }
+    alert("Welcome!");
   };
 
   const handleRegister = (e) => {
@@ -72,6 +91,7 @@ function App() {
     setRegisteredUser({ email, password, username });
     setIsRegister(false); // go back to login
     setErrorMessage("✅ Registered successfully. Please login.");
+    alert("Registration Successful ✅");
   };
 
   const handleLogout = () => {
@@ -79,7 +99,6 @@ function App() {
     setIsAuthenticated(false);
     setUserProfilePic(null);
     setShowAuthModal(true);
-    setErrorMessage("");
   };
 
   // Add item to the cart
@@ -98,7 +117,6 @@ function App() {
     }
   };
 
-  // Update the quantity of a cart item
   const handleQuantityChange = (id, quantity) => {
     setCartItems(
       cartItems.map((item) => (item.id === id ? { ...item, quantity } : item))
@@ -110,7 +128,6 @@ function App() {
     setCartItems(cartItems.filter((item) => item.id !== id));
   };
 
-  // Handle the purchase button
   const handlePurchase = () => {
     const printContents = printRef.current.innerHTML;
     const originalContents = document.body.innerHTML;
@@ -123,21 +140,46 @@ function App() {
     window.location.reload();
   };
 
+  // Search handler
   const handleChange = (e) => {
-    const searchTerm = e.target.value;
+    const searchTerm = e.target.value.toLowerCase();
     setSearchItem(searchTerm);
 
-    const filtered = apiData.filter((item) =>
-      item.title.toLowerCase().includes(searchTerm.toLowerCase())
+    if (searchTerm.trim() === "") {
+      setShowHeader(true);
+    } else {
+      setShowHeader(false);
+    }
+
+    const filtered = apiData.filter(
+      (product) =>
+        product.title.toLowerCase().includes(searchTerm) ||
+        product.category.toLowerCase().includes(searchTerm)
     );
     setFilteredData(filtered);
+  };
+
+  const handleCategoryFilter = (category) => {
+    const filteredByCategory = apiData.filter(
+      (product) => product.category === category
+    );
+    setFilteredData(filteredByCategory);
+  };
+
+  const capitalizeWords = (str) => {
+    return str
+      .split(" ")
+      .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+      .join(" ");
   };
 
   return (
     <div className="container">
       <div className="navbar">
-        <i className="fi fi-brands-shopify logo-icon"></i>
-
+        <div className="logo-section">
+          <i className="fi fi-brands-shopify logo-icon"></i>
+          <h2 className="shop-name">QuickBasket</h2>
+        </div>
         <input
           className="search"
           type="search"
@@ -167,10 +209,12 @@ function App() {
           >
             Products <i className="fi fi-rr-angle-small-down"></i>
             <ul className="dropdown-menu">
-              <li>Electronics</li>
-              <li>Clothing</li>
-              <li>Footwear</li>
-              <li>Accessories</li>
+              <li onClick={() => setFilteredData(apiData)}>All Products</li>
+              {categories.map((category, index) => (
+                <li key={index} onClick={() => handleCategoryFilter(category)}>
+                  {capitalizeWords(category)}
+                </li>
+              ))}
             </ul>
           </li>
           <li>Contact</li>
@@ -202,6 +246,16 @@ function App() {
           </span>
         </div>
       </div>
+      {/* Offer Image */}
+      {searchItem.trim() === "" && (
+        <div className="offer-section">
+          <img
+            src="./src/assets/7005953.jpg" // Make sure 'offer.jpg' is inside your public folder
+            alt="Special Offer"
+            className="offer-image"
+          />
+        </div>
+      )}
 
       {/* Auth Modal */}
       {showAuthModal && (
@@ -250,41 +304,43 @@ function App() {
         </div>
       )}
       <div className={`page-content ${!isAuthenticated ? "blurred" : ""}`}>
-        <h1>TRENDING NOW</h1>
-        <div className="products">
+        <h1>🛒 Explore Our Latest Products</h1>
+        <div className="products" ref={printRef}>
           {filteredData.length === 0 ? (
-            <p>No Product Found!</p>
+            <p>No products found!</p>
           ) : (
-            filteredData.map((item) => {
-              return (
-                <div className="card" key={item.id}>
-                  <div>
-                    <img
-                      src={item.image}
-                      alt="Image"
-                      onError={(e) => {
-                        e.target.onerror = null;
-                        e.target.src =
-                          "https://cdn-icons-png.flaticon.com/512/12311/12311758.png";
-                      }}
-                    />
-                  </div>
-                  <div>
-                    <h3>{item.title}</h3>
-                  </div>
-                  <div>
-                    <h2 className="price">Price: ${item.price}</h2>
-                  </div>
-                  <div className="btn">
-                    <button onClick={() => handleAddToCart(item)}>
-                      Add to Cart
-                    </button>
-                  </div>
+            filteredData.map((item) => (
+              <div className="card" key={item.id}>
+                <div>
+                  <img
+                    src={
+                      item.image ||
+                      "https://cdn-icons-png.flaticon.com/512/12311/12311758.png"
+                    }
+                    alt={item.title || "Product Image"}
+                    onError={(e) => {
+                      e.target.onerror = null;
+                      e.target.src =
+                        "https://cdn-icons-png.flaticon.com/512/12311/12311758.png";
+                    }}
+                  />
                 </div>
-              );
-            })
+                <div>
+                  <h3>{item.title}</h3>
+                </div>
+                <div>
+                  <h2 className="price">Price: ${item.price}</h2>
+                </div>
+                <div className="btn">
+                  <button onClick={() => handleAddToCart(item)}>
+                    Add to Cart
+                  </button>
+                </div>
+              </div>
+            ))
           )}
         </div>
+
         {/* Cart Sidebar */}
         {isCartOpen && (
           <div className="cart-sidebar">

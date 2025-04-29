@@ -76,28 +76,34 @@ ul {
 .nav-links .dropdown i {
   margin-left: 5px;
 }
-
-/* Dropdown menu */
-.nav-links .dropdown-menu {
+.dropdown {
+  position: relative;
+}
+.dropdown-menu {
   display: none;
-  position: absolute;
-  background-color: white;
   top: 100%;
   left: 0;
-  width: 150px;
+  max-height: 300px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  width: 200px;
+  white-space: normal;
+  word-break: break-word;
+  position: absolute;
+  background-color: white;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  z-index: 10;
+  z-index: 100;
 }
-
-.nav-links .dropdown-menu li {
+.dropdown-menu li {
   padding: 10px;
+  cursor: pointer;
   border-bottom: 1px solid #eee;
-  white-space: nowrap;
+  color:#0a152f;
 }
-
-.nav-links .dropdown-menu li:hover {
+.dropdown-menu li:hover {
   background-color: #f0f0f0;
 }
+/* Dropdown menu */
 
 /* Show dropdown on hover for desktop */
 .nav-links .dropdown:hover .dropdown-menu {
@@ -140,7 +146,7 @@ input[type="search"] {
 }
 .search {
   padding: 10px;
-  width: 40%;
+  width: 20%;
   border-radius: 10px;
   border: none;
   /* font-size: 16px; */
@@ -351,7 +357,7 @@ footer {
   .nav-links.active {
     display: flex;
   }
-  .dropdown-menu li{
+  .dropdown-menu li {
     color: #0a152f;
   }
 }
@@ -530,4 +536,47 @@ footer {
   display: flex;
   align-items: center;
   gap: 15px;
+}
+/*Image Header*/
+.full-header {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+
+.header-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Offer section */
+.offer-section {
+  margin-top: 5px; /* height of navbar */
+  width: 100%;
+  display: flex;
+  justify-content: center; /* centers the image */
+  padding: 20px; /* space on left and right */
+  box-sizing: border-box;
+}
+
+.offer-image {
+  width: 100%;
+  max-width: 900px; /* maximum width of the image */
+  height: 180px;
+  object-fit: cover;
+  border-radius: 10px; /* optional: makes corners slightly rounded */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* optional: adds soft shadow */
+}
+.logo-section {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.shop-name {
+  font-size: 24px;
+  font-weight: bold;
+  color: white;
 }
