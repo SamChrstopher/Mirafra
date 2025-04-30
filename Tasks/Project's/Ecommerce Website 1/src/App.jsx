@@ -25,14 +25,13 @@ function App() {
   const printRef = useRef();
 
   useEffect(() => {
-    // Use your local db.json data
     const fetchProducts = async () => {
       try {
-        const localData = db; // Already imported
+        const localData = db; 
         setApiData(localData);
         setFilteredData(localData);
 
-        // Extract unique categories
+      
         const uniqueCategories = [
           ...new Set(localData.map((item) => item.category)),
         ];
@@ -89,7 +88,7 @@ function App() {
 
     // Save registered user
     setRegisteredUser({ email, password, username });
-    setIsRegister(false); // go back to login
+    setIsRegister(false); 
     setErrorMessage("✅ Registered successfully. Please login.");
     alert("Registration Successful ✅");
   };
@@ -176,37 +175,70 @@ function App() {
   return (
     <div className="container">
       <div className="navbar">
-        <div className="logo-section">
-          <i className="fi fi-brands-shopify logo-icon"></i>
-          <h2 className="shop-name">QuickBasket</h2>
-        </div>
-        <input
-          className="search"
-          type="search"
-          placeholder="Search..."
-          value={searchItem}
-          onChange={handleChange}
-        />
-
-        <div
-          className="menu-icon"
-          onClick={() => setMobileMenuOpen(!isMobileMenuOpen)}
-        >
-          <i
-            className={
-              isMobileMenuOpen ? "fi fi-br-cross" : "fi fi-rr-menu-burger"
-            }
-          ></i>
+        <div className="navbar-row1">
+          <div className="logo-section">
+            <i className="fi fi-brands-shopify logo-icon"></i>
+            <h2 className="shop-name">QuickBasket</h2>
+          </div>
+          <div className="right-icons">
+            <div
+              className="menu-icon"
+              onClick={() => setMobileMenuOpen(!isMobileMenuOpen)}
+            >
+              <i
+                className={
+                  isMobileMenuOpen ? "fi fi-br-cross" : "fi fi-rr-menu-burger"
+                }
+              ></i>
+            </div>
+            <div className="profile-section">
+              {isAuthenticated ? (
+                <img
+                  src={userProfilePic}
+                  alt="Profile"
+                  className="profile-pic"
+                  onClick={handleLogout}
+                  title="Click to logout"
+                />
+              ) : (
+                <img
+                  src="https://i.pinimg.com/736x/b6/e3/1a/b6e31a84c99848a3822f8770db472627.jpg"
+                  alt="Default profile"
+                  className="profile-pic"
+                  onClick={() => setShowAuthModal(true)}
+                  title="Login"
+                />
+              )}
+            </div>
+            <span className="icon2" onClick={() => setIsCartOpen(true)}>
+              <i className="fi fi-sr-shopping-cart-check logo-icon2"></i>{" "}
+              {cartItems.reduce((acc, item) => acc + item.quantity, 0)}
+            </span>
+          </div>
         </div>
 
         <ul className={`nav-links ${isMobileMenuOpen ? "active" : ""}`}>
-          <li>Home</li>
-          <li>About</li>
-          <li>Services</li>
+          <li>
+            <span className="material-symbols-outlined nav-logo">home</span>{" "}
+            Home
+          </li>
+          <li>
+            <span className="material-symbols-outlined nav-logo">info</span>{" "}
+            About
+          </li>
+          <li>
+            <span className="material-symbols-outlined nav-logo">
+              home_repair_service
+            </span>{" "}
+            Services
+          </li>
           <li
             className={`dropdown ${isDropdownOpen ? "active" : ""}`}
             onClick={() => setIsDropdownOpen(!isDropdownOpen)}
           >
+            <span className="material-symbols-outlined nav-logo">
+              local_mall
+            </span>
             Products <i className="fi fi-rr-angle-small-down"></i>
             <ul className="dropdown-menu">
               <li onClick={() => setFilteredData(apiData)}>All Products</li>
@@ -217,40 +249,28 @@ function App() {
               ))}
             </ul>
           </li>
-          <li>Contact</li>
+          <li>
+            <span className="material-symbols-outlined nav-logo">mail</span>{" "}
+            Contact
+          </li>
         </ul>
 
-        <div className="right-icons">
-          <div className="profile-section">
-            {isAuthenticated ? (
-              <img
-                src={userProfilePic}
-                alt="Profile"
-                className="profile-pic"
-                onClick={handleLogout}
-                title="Click to logout"
-              />
-            ) : (
-              <img
-                src="https://i.pinimg.com/736x/b6/e3/1a/b6e31a84c99848a3822f8770db472627.jpg"
-                alt="Default profile"
-                className="profile-pic"
-                onClick={() => setShowAuthModal(true)}
-                title="Login"
-              />
-            )}
-          </div>
-          <span className="icon2" onClick={() => setIsCartOpen(true)}>
-            <i className="fi fi-sr-shopping-cart-check logo-icon2"></i>{" "}
-            {cartItems.reduce((acc, item) => acc + item.quantity, 0)}
-          </span>
+        <div className="navbar-row3">
+          <input
+            className="search"
+            type="search"
+            placeholder="Search..."
+            value={searchItem}
+            onChange={handleChange}
+          />
         </div>
       </div>
+
       {/* Offer Image */}
       {searchItem.trim() === "" && (
         <div className="offer-section">
           <img
-            src="./src/assets/7005953.jpg" // Make sure 'offer.jpg' is inside your public folder
+            src="./src/assets/7005953.jpg" 
             alt="Special Offer"
             className="offer-image"
           />
