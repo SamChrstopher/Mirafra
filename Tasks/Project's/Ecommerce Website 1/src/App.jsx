@@ -22,16 +22,22 @@ function App() {
   const [showHeader, setShowHeader] = useState(true);
   const [searchQuery, setSearchQuery] = useState("");
 
+  const [showAbout, setShowAbout] = useState(false);
+  const [showService, setShowService] = useState(false);
+  const [showContact, setShowContact] = useState(false);
+
+  const [isChatOpen, setIsChatOpen] = useState(false);
+  const [animatedMessage, setAnimatedMessage] = useState("");
+
   const printRef = useRef();
 
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const localData = db; 
+        const localData = db;
         setApiData(localData);
         setFilteredData(localData);
 
-      
         const uniqueCategories = [
           ...new Set(localData.map((item) => item.category)),
         ];
@@ -52,6 +58,27 @@ function App() {
       setShowAuthModal(false);
     }
   }, []);
+
+  useEffect(() => {
+    if (isChatOpen) {
+      const fullMessage = `Hello, Good ${getGreetingTime()}!\nHow can I help you today?`;
+      let index = 0;
+      const interval = setInterval(() => {
+        setAnimatedMessage(fullMessage.slice(0, index));
+        index++;
+        if (index > fullMessage.length) clearInterval(interval);
+      }, 30); // typing speed
+    } else {
+      setAnimatedMessage("");
+    }
+  }, [isChatOpen]);
+
+  const getGreetingTime = () => {
+    const hour = new Date().getHours();
+    if (hour < 12) return "morning";
+    if (hour < 18) return "afternoon";
+    return "evening";
+  };
 
   const handleLogin = (e) => {
     e.preventDefault();
@@ -88,7 +115,7 @@ function App() {
 
     // Save registered user
     setRegisteredUser({ email, password, username });
-    setIsRegister(false); 
+    setIsRegister(false);
     setErrorMessage("✅ Registered successfully. Please login.");
     alert("Registration Successful ✅");
   };
@@ -130,13 +157,26 @@ function App() {
   const handlePurchase = () => {
     const printContents = printRef.current.innerHTML;
     const originalContents = document.body.innerHTML;
-    alert("Proceeding to the Checkout...");
+    alert("✅ Proceeding to the Checkout...");
     document.body.innerHTML = printContents;
     window.print();
     document.body.innerHTML = originalContents;
 
     setCartItems([]);
     window.location.reload();
+  };
+  const handleSubmit2 = (e) => {
+    e.preventDefault();
+
+    // Add fade-out effect
+    const modalBox = document.querySelector(".modal-box");
+    modalBox.classList.add("fade-out");
+
+    // Wait for animation to finish (300ms), then hide modal and show alert
+    setTimeout(() => {
+      setShowContact(false);
+      alert("✅ Message sent successfully!");
+    }, 300); // match with animation duration
   };
 
   // Search handler
@@ -174,29 +214,186 @@ function App() {
 
   return (
     <div className="container">
-      <div className="navbar">
-        <div className="navbar-row1">
-          <div className="logo-section">
-            <i className="fi fi-brands-shopify logo-icon"></i>
-            <h2 className="shop-name">QuickBasket</h2>
-          </div>
-          <div className="right-icons">
-            <div
-              className="menu-icon"
-              onClick={() => setMobileMenuOpen(!isMobileMenuOpen)}
-            >
-              <i
-                className={
-                  isMobileMenuOpen ? "fi fi-br-cross" : "fi fi-rr-menu-burger"
-                }
-              ></i>
+      <div className="navbar-mobile">
+        <div className="navbar">
+          <div className="navbar-row1">
+            <div className="logo-section">
+              <i className="fi fi-brands-shopify logo-icon"></i>
+              <h2 className="shop-name">QuickBasket</h2>
             </div>
-            <div className="profile-section">
+            <div className="right-icons">
+              <div
+                className="menu-icon"
+                onClick={() => setMobileMenuOpen(!isMobileMenuOpen)}
+              >
+                <i
+                  className={
+                    isMobileMenuOpen ? "fi fi-br-cross" : "fi fi-rr-menu-burger"
+                  }
+                ></i>
+              </div>
+              <div className="profile-section">
+                {isAuthenticated ? (
+                  <img
+                    src={userProfilePic}
+                    alt="Profile"
+                    className="profile-pic"
+                    onClick={handleLogout}
+                    title="Click to logout"
+                  />
+                ) : (
+                  <img
+                    src="https://i.pinimg.com/736x/b6/e3/1a/b6e31a84c99848a3822f8770db472627.jpg"
+                    alt="Default profile"
+                    className="profile-pic"
+                    onClick={() => setShowAuthModal(true)}
+                    title="Login"
+                  />
+                )}
+              </div>
+              <span
+                className="icon2"
+                onClick={() => setIsCartOpen(true)}
+                title="Cart"
+              >
+                <i className="fi fi-sr-shopping-cart-check logo-icon2"></i>{" "}
+                {cartItems.reduce((acc, item) => acc + item.quantity, 0)}
+              </span>
+            </div>
+          </div>
+          <ul className={`nav-links ${isMobileMenuOpen ? "active" : ""}`}>
+            <li>
+              <span className="material-symbols-outlined nav-logo">home</span>{" "}
+              Home
+            </li>
+            <li
+              onClick={(e) => {
+                e.preventDefault();
+                setShowAbout(true);
+              }}
+            >
+              <span className="material-symbols-outlined nav-logo nav-link">
+                info
+              </span>{" "}
+              About
+            </li>
+            <li onClick={() => setShowService(true)}>
+              <span className="material-symbols-outlined nav-logo">
+                home_repair_service
+              </span>{" "}
+              Services
+            </li>
+            <li
+              className={`dropdown ${isDropdownOpen ? "active" : ""}`}
+              onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+            >
+              <span className="material-symbols-outlined nav-logo">
+                local_mall
+              </span>
+              Products <i className="fi fi-rr-angle-small-down"></i>
+              <ul className="dropdown-menu">
+                <li onClick={() => setFilteredData(apiData)}>All Products</li>
+                {categories.map((category, index) => (
+                  <li
+                    key={index}
+                    onClick={() => handleCategoryFilter(category)}
+                  >
+                    {capitalizeWords(category)}
+                  </li>
+                ))}
+              </ul>
+            </li>
+            <li onClick={() => setShowContact(true)}>
+              <span className="material-symbols-outlined nav-logo">mail</span>{" "}
+              Contact
+            </li>
+          </ul>
+          <div className="navbar-row3">
+            <input
+              className="search"
+              type="search"
+              placeholder="Search..."
+              value={searchItem}
+              onChange={handleChange}
+            />
+          </div>
+        </div>
+      </div>
+      <div className="navbar-desktop">
+        <div className="navbar2">
+          <div className="logo-section2">
+            <i className="fi fi-brands-shopify logo-icon2"></i>
+            <h2 className="shop-name2">QuickBasket</h2>
+          </div>
+          <input
+            className="search2"
+            type="search"
+            placeholder="Search..."
+            value={searchItem}
+            onChange={handleChange}
+          />
+          <div
+            className="menu-icon2"
+            onClick={() => setMobileMenuOpen(!isMobileMenuOpen)}
+          >
+            <i
+              className={
+                isMobileMenuOpen ? "fi fi-br-cross" : "fi fi-rr-menu-burger"
+              }
+            ></i>
+          </div>
+          <ul className={`nav-links2 ${isMobileMenuOpen ? "active2" : ""}`}>
+            <li>
+              <span className="material-symbols-outlined nav-logo">home</span>{" "}
+              Home
+            </li>
+            <li
+              onClick={(e) => {
+                e.preventDefault();
+                setShowAbout(true);
+              }}
+            >
+              <span className="material-symbols-outlined nav-logo">info</span>{" "}
+              About
+            </li>
+            <li onClick={() => setShowService(true)}>
+              <span className="material-symbols-outlined nav-logo">
+                home_repair_service
+              </span>{" "}
+              Services
+            </li>
+            <li
+              className={`dropdown2 ${isDropdownOpen ? "active2" : ""}`}
+              onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+            >
+              <span className="material-symbols-outlined nav-logo">
+                local_mall
+              </span>
+              Products <i className="fi fi-rr-angle-small-down"></i>
+              <ul className="dropdown-menu2">
+                <li onClick={() => setFilteredData(apiData)}>All Products</li>
+                {categories.map((category, index) => (
+                  <li
+                    key={index}
+                    onClick={() => handleCategoryFilter(category)}
+                  >
+                    {capitalizeWords(category)}
+                  </li>
+                ))}
+              </ul>
+            </li>
+            <li onClick={() => setShowContact(true)}>
+              <span className="material-symbols-outlined nav-logo">mail</span>{" "}
+              Contact
+            </li>
+          </ul>
+          <div className="right-icons2">
+            <div className="profile-section2">
               {isAuthenticated ? (
                 <img
                   src={userProfilePic}
                   alt="Profile"
-                  className="profile-pic"
+                  className="profile-pic2"
                   onClick={handleLogout}
                   title="Click to logout"
                 />
@@ -204,65 +401,21 @@ function App() {
                 <img
                   src="https://i.pinimg.com/736x/b6/e3/1a/b6e31a84c99848a3822f8770db472627.jpg"
                   alt="Default profile"
-                  className="profile-pic"
+                  className="profile-pic2"
                   onClick={() => setShowAuthModal(true)}
                   title="Login"
                 />
               )}
             </div>
-            <span className="icon2" onClick={() => setIsCartOpen(true)}>
-              <i className="fi fi-sr-shopping-cart-check logo-icon2"></i>{" "}
+            <span
+              className="icon22"
+              onClick={() => setIsCartOpen(true)}
+              title="Cart"
+            >
+              <i className="fi fi-sr-shopping-cart-check logo-icon22"></i>{" "}
               {cartItems.reduce((acc, item) => acc + item.quantity, 0)}
             </span>
           </div>
-        </div>
-
-        <ul className={`nav-links ${isMobileMenuOpen ? "active" : ""}`}>
-          <li>
-            <span className="material-symbols-outlined nav-logo">home</span>{" "}
-            Home
-          </li>
-          <li>
-            <span className="material-symbols-outlined nav-logo">info</span>{" "}
-            About
-          </li>
-          <li>
-            <span className="material-symbols-outlined nav-logo">
-              home_repair_service
-            </span>{" "}
-            Services
-          </li>
-          <li
-            className={`dropdown ${isDropdownOpen ? "active" : ""}`}
-            onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-          >
-            <span className="material-symbols-outlined nav-logo">
-              local_mall
-            </span>
-            Products <i className="fi fi-rr-angle-small-down"></i>
-            <ul className="dropdown-menu">
-              <li onClick={() => setFilteredData(apiData)}>All Products</li>
-              {categories.map((category, index) => (
-                <li key={index} onClick={() => handleCategoryFilter(category)}>
-                  {capitalizeWords(category)}
-                </li>
-              ))}
-            </ul>
-          </li>
-          <li>
-            <span className="material-symbols-outlined nav-logo">mail</span>{" "}
-            Contact
-          </li>
-        </ul>
-
-        <div className="navbar-row3">
-          <input
-            className="search"
-            type="search"
-            placeholder="Search..."
-            value={searchItem}
-            onChange={handleChange}
-          />
         </div>
       </div>
 
@@ -270,7 +423,7 @@ function App() {
       {searchItem.trim() === "" && (
         <div className="offer-section">
           <img
-            src="./src/assets/7005953.jpg" 
+            src="./src/assets/7005953.jpg"
             alt="Special Offer"
             className="offer-image"
           />
@@ -323,6 +476,224 @@ function App() {
           </div>
         </div>
       )}
+
+      {/* Chat Support Icon & Sidebar */}
+      {isChatOpen && (
+        <div className="chat-box">
+          <div className="chat-header">
+            <span className="chat-header-left">
+              <span className="chat-person-icon">👤</span> Customer Support
+            </span>
+            <span className="chat-close" onClick={() => setIsChatOpen(false)}>
+              &times;
+            </span>
+          </div>
+          <div className="chat-body">
+            <div className="bot-message">
+              <span className="bot-icon">👤</span>
+              <p className="typing-text">{animatedMessage}</p>
+            </div>
+          </div>
+          <div className="chat-input">
+            <input type="text" placeholder="Type your message..." disabled />
+            <button disabled>Send</button>
+          </div>
+        </div>
+      )}
+      <div
+        className="chat-icon"
+        onClick={() => setIsChatOpen(true)}
+        title="Chat with us"
+      >
+        💬
+      </div>
+
+      {showAbout && (
+        <div className="modal-overlay">
+          <div className="modal-box">
+            <button
+              className="close-button"
+              onClick={() => setShowAbout(false)}
+              title="Close"
+            >
+              &times;
+            </button>
+
+            <h2 className="modal-title">
+              <span role="img" aria-label="cart">
+                🛒
+              </span>{" "}
+              About <span style={{ color: "#4CAF50" }}>Quick Basket</span>
+            </h2>
+            <br />
+
+            <p className="modal-text">
+              <span role="img" aria-label="sparkle">
+                ✨
+              </span>{" "}
+              <strong>Quick Basket</strong> is your go-to destination for
+              hassle-free, enjoyable online shopping. We blend quality,
+              affordability, and convenience to bring the best products right to
+              your doorstep.
+            </p>
+
+            <p className="modal-text">
+              <span role="img" aria-label="delivery">
+                🚀
+              </span>{" "}
+              <strong>Fast Delivery:</strong> We offer same-day or next-day
+              delivery in most cities to make your experience swift and
+              seamless.
+            </p>
+
+            <p className="modal-text">
+              <span role="img" aria-label="shield">
+                🛡️
+              </span>{" "}
+              <strong>Secure Shopping:</strong> Your data and payments are
+              protected with industry-grade encryption and security protocols.
+            </p>
+
+            <p className="modal-text">
+              <span role="img" aria-label="support">
+                🤝
+              </span>{" "}
+              <strong>Dedicated Support:</strong> Our team is here 24/7 to
+              assist you with orders, returns, and questions—your satisfaction
+              is our priority.
+            </p>
+
+            <p className="modal-text">
+              <span role="img" aria-label="gift">
+                🎁
+              </span>{" "}
+              <strong>Exciting Deals:</strong> Enjoy regular discounts, cashback
+              offers, and member-only perks to get the best value on every
+              purchase.
+            </p>
+
+            <p
+              className="modal-text"
+              style={{
+                textAlign: "center",
+                marginTop: "20px",
+                color: "#4CAF50",
+                fontWeight: "bold",
+              }}
+            >
+              Thank you for choosing Quick Basket!
+            </p>
+          </div>
+        </div>
+      )}
+
+      {showService && (
+        <div className="modal-overlay">
+          <div className="modal-box">
+            <button
+              className="close-button"
+              onClick={() => setShowService(false)}
+              title="Close"
+            >
+              &times;
+            </button>
+
+            <h2 className="modal-title">
+              <span role="img" aria-label="gear">
+                🛠️
+              </span>{" "}
+              Our Services at{" "}
+              <span style={{ color: "#4CAF50" }}>Quick Basket</span>
+            </h2>
+            <br />
+
+            <p className="modal-text">
+              <span role="img" aria-label="fast">
+                🚚
+              </span>{" "}
+              <strong>Fast & Reliable Delivery:</strong> Get your orders
+              delivered at lightning speed across major cities with real-time
+              tracking.
+            </p>
+
+            <p className="modal-text">
+              <span role="img" aria-label="payment">
+                💳
+              </span>{" "}
+              <strong>Secure Payment Options:</strong> Choose from multiple safe
+              payment methods—Credit/Debit Cards, UPI, Wallets, and more.
+            </p>
+
+            <p className="modal-text">
+              <span role="img" aria-label="returns">
+                🔄
+              </span>{" "}
+              <strong>Easy Returns & Refunds:</strong> Hassle-free return policy
+              with quick refunds for eligible items.
+            </p>
+
+            <p className="modal-text">
+              <span role="img" aria-label="support">
+                📞
+              </span>{" "}
+              <strong>24/7 Customer Support:</strong> Our friendly support team
+              is always ready to help you via chat, email, or phone.
+            </p>
+          </div>
+        </div>
+      )}
+      {showContact && (
+        <div className="modal-overlay">
+          <div className="modal-box">
+            <button
+              className="close-button"
+              onClick={() => setShowContact(false)}
+              title="Close"
+            >
+              &times;
+            </button>
+
+            <h2 className="modal-title">
+              📞 Contact <span style={{ color: "#4CAF50" }}>Quick Basket</span>
+            </h2>
+            <br />
+
+            <form className="contact-form" onSubmit={handleSubmit2}>
+              <label htmlFor="name">👤 Name:</label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                placeholder="Enter your name"
+                required
+              />
+
+              <label htmlFor="email">📧 Email:</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="Enter your email"
+                required
+              />
+
+              <label htmlFor="message">💬 Message:</label>
+              <textarea
+                id="message"
+                name="message"
+                rows="3"
+                placeholder="Your message..."
+                required
+              ></textarea>
+
+              <button type="submit" className="contact-submit">
+                ✅ Get in touch with us
+              </button>
+            </form>
+          </div>
+        </div>
+      )}
+
       <div className={`page-content ${!isAuthenticated ? "blurred" : ""}`}>
         <h1>🛒 Explore Our Latest Products</h1>
         <div className="products" ref={printRef}>
@@ -416,40 +787,85 @@ function App() {
             </div>
             <div className="cart-footer">
               <button onClick={handlePurchase} className="purchase-button">
-                Proceed to Checkout
+                ✅ Proceed to Checkout
               </button>
             </div>
           </div>
         )}
         <div style={{ display: "none" }}>
-          <div ref={printRef}>
-            <h2>Invoice</h2>
-            <table border="1" cellPadding="10" cellSpacing="0" width="100%">
-              <thead>
+          <div
+            ref={printRef}
+            style={{
+              fontFamily: "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif",
+              padding: "40px",
+              color: "#333",
+              maxWidth: "800px",
+              margin: "auto",
+              border: "2px solid #eee",
+            }}
+          >
+            {/* Header */}
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "space-between",
+                alignItems: "center",
+                marginBottom: "30px",
+              }}
+            >
+              <div>
+                <h1 style={{ fontSize: "36px", margin: 0, color: "#2E86C1" }}>
+                  🛍️ Quick Basket
+                </h1>
+                <p style={{ fontSize: "14px", color: "#777" }}>
+                  support@quickbasket.com
+                  <br />
+                  www.quickbasket.com
+                </p>
+              </div>
+              <div style={{ textAlign: "right" }}>
+                <p style={{ fontSize: "16px", marginBottom: "5px" }}>
+                  <strong>Invoice ID:</strong> #
+                  {Math.floor(Math.random() * 100000)}
+                </p>
+                <p style={{ fontSize: "16px" }}>
+                  <strong>Date:</strong> {new Date().toLocaleDateString()}
+                  <br />
+                  <strong>Time:</strong> {new Date().toLocaleTimeString()}
+                </p>
+              </div>
+            </div>
+
+            {/* Table */}
+            <table
+              border="1"
+              cellPadding="12"
+              cellSpacing="0"
+              width="100%"
+              style={{ borderCollapse: "collapse", border: "1px solid #ccc" }}
+            >
+              <thead style={{ backgroundColor: "#f4f6f7", color: "#333" }}>
                 <tr>
-                  <th>Product</th>
-                  <th>Qty</th>
-                  <th>Price</th>
-                  <th>Total</th>
+                  <th>🛒 Product</th>
+                  <th>📦 Qty</th>
+                  <th>💰 Price</th>
+                  <th>🧮 Total</th>
                 </tr>
               </thead>
               <tbody>
                 {cartItems.map((item) => (
                   <tr key={item.id}>
                     <td>{item.title}</td>
-                    <td>{item.quantity}</td>
+                    <td style={{ textAlign: "center" }}>{item.quantity}</td>
                     <td>${item.price.toFixed(2)}</td>
                     <td>${(item.price * item.quantity).toFixed(2)}</td>
                   </tr>
                 ))}
-                <tr>
-                  <td
-                    colSpan="3"
-                    style={{ textAlign: "right", fontWeight: "bold" }}
-                  >
+                <tr style={{ backgroundColor: "#f9f9f9", fontWeight: "bold" }}>
+                  <td colSpan="3" style={{ textAlign: "right" }}>
                     Grand Total:
                   </td>
-                  <td style={{ fontWeight: "bold" }}>
+                  <td>
                     $
                     {cartItems
                       .reduce(
@@ -461,6 +877,23 @@ function App() {
                 </tr>
               </tbody>
             </table>
+
+            {/* Footer */}
+            <div
+              style={{
+                marginTop: "40px",
+                textAlign: "center",
+                color: "#555",
+                fontSize: "14px",
+              }}
+            >
+              <p>
+                Thank you for shopping with <strong>Quick Basket</strong>! 😊
+              </p>
+              <p>
+                Visit again at <strong>www.quickbasket.com</strong>
+              </p>
+            </div>
           </div>
         </div>
         <footer className="footer">
@@ -478,13 +911,18 @@ function App() {
                 <li>
                   <a href="#">Home</a>
                 </li>
-                <li>
+                <li
+                  onClick={(e) => {
+                    e.preventDefault();
+                    setShowAbout(true);
+                  }}
+                >
                   <a href="#">About</a>
                 </li>
-                <li>
+                <li onClick={() => setShowService(true)}>
                   <a href="#">Services</a>
                 </li>
-                <li>
+                <li onClick={() => setShowContact(true)}>
                   <a href="#">Contact</a>
                 </li>
               </ul>

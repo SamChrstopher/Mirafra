@@ -81,12 +81,14 @@ ul {
 
 .price {
   font-size: 20px;
-  color: #e63946;
+  /* color: #e63946; */
+  color: #0a152f;
   font-weight: 600;
   margin-bottom: 12px;
 }
 .btn button {
-  background-color: #1d3557;
+  /* background-color: #1d3557; */
+  background-color: #db0909;
   color: #fff;
   padding: 10px 16px;
   border-radius: 10px;
@@ -95,7 +97,8 @@ ul {
   width: auto;
 }
 .btn button:hover {
-  background-color: #457b9d;
+  /* background-color: #457b9d; */
+  background-color: rgb(41, 39, 38);
 }
 .content2 {
   display: flex;
@@ -129,13 +132,15 @@ button {
   justify-content: center;
 }
 footer {
-  background-color: #0a152f;
+  /* background-color: #0a152f; */
+  background-color: #db0909;
   padding: 20px;
   margin-top: 30px;
   color: white;
 }
 .footer {
-  background-color: #0a152f;
+  /* background-color: #0a152f; */
+  background-color: #db0909;
   color: white;
   padding-top: 30px;
   font-family: "Poppins", sans-serif;
@@ -167,7 +172,7 @@ footer {
 .footer-section p,
 .footer-section a {
   font-size: 14px;
-  color: #cccccc;
+  color: #fff;
   text-decoration: none;
 }
 
@@ -181,7 +186,7 @@ footer {
   padding: 15px 0;
   border-top: 1px solid #444;
   font-size: 14px;
-  color: #999;
+  color: #fff;
 }
 .footer-section.contact {
   margin-left: 40px;
@@ -268,6 +273,7 @@ footer {
   background-color: red;
   color: white;
   border: none;
+  border-radius: 5px;
   cursor: pointer;
   width: 50px;
 }
@@ -385,6 +391,9 @@ footer {
   border-radius: 10px;
   cursor: pointer;
 }
+.auth-box button:hover{
+  background-color: #007bff;
+}
 .toggle-link {
   color: #07701e;
   margin-top: 10px;
@@ -439,7 +448,8 @@ footer {
 
 /* Navbar Container */
 .navbar {
-  background-color: #0a152f;
+  /* background-color: #0a152f; */
+  background-color: #db0909;
   color: white;
   padding: 10px 20px;
   display: flex;
@@ -502,6 +512,8 @@ footer {
   justify-content: center;
   font-size: 20px;
   min-width: 24px; 
+  position: relative;
+  top: 4px;
 }
 
 .nav-links li:hover {
@@ -529,6 +541,7 @@ footer {
   margin-top: 5px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   color: #0a152f;
+  /* color:#db0909; */
   z-index: 100;
 }
 .dropdown-menu li {
@@ -612,7 +625,8 @@ footer {
   .nav-links {
     display: none;
     flex-direction: column;
-    background-color: #0a152f;
+    /* background-color: #0a152f; */
+    background-color: #db0909;
     width: 100%;
     padding: 10px 0;
   }
@@ -639,7 +653,8 @@ footer {
   .nav-links {
     display: none;
     flex-direction: column;
-    background-color: #0a152f;
+    /* background-color: #0a152f; */
+    background-color: #db0909;
     padding: 10px 0;
   }
 
@@ -660,3 +675,484 @@ footer {
     width: 100%;
   }
 }
+
+/*Navbar 2*/
+ul {
+  list-style-type: none;
+  display: flex;
+  gap: 50px;
+}
+.navbar2 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 10px 20px;
+  /* background-color: #0a152f; */
+  background-color: #db0909;
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+.nav-links2 {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+}
+
+.nav-links2 li {
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.nav-links2 li:hover {
+  color: #fac905;
+}
+/* Dropdown container */
+.nav-links2 .dropdown2 {
+  position: relative;
+  cursor: pointer;
+}
+
+/* Dropdown icon */
+.nav-links2 .dropdown2 i {
+  margin-left: 5px;
+}
+.dropdown2 {
+  position: relative;
+}
+.dropdown-menu2 {
+  display: none;
+  top: 100%;
+  left: 0;
+  max-height: 300px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  width: 200px;
+  white-space: normal;
+  word-break: break-word;
+  position: absolute;
+  background-color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 100;
+}
+.dropdown-menu2 li {
+  padding: 10px;
+  cursor: pointer;
+  border-bottom: 1px solid #eee;
+  /* color:#0a152f; */
+  color: #db0909;
+}
+.dropdown-menu2 li:hover {
+  background-color: #f0f0f0;
+}
+/* Dropdown menu */
+
+/* Show dropdown on hover for desktop */
+.nav-links2 .dropdown2:hover .dropdown-menu2 {
+  display: block;
+}
+
+/* Hamburger icon */
+.menu-icon2 {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+/* Cart icon spacing */
+.icon22 {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.logo-icon2 {
+  font-size: 38px;
+  position: relative;
+  top: 4px;
+}
+.icon22 {
+  margin-left: 80px;
+  cursor: pointer;
+  font-size: 20px;
+}
+.logo-icon22 {
+  font-size: 28px;
+  cursor: pointer;
+}
+li {
+  cursor: pointer;
+  font-weight: bold;
+}
+input[type="search"] {
+  font-weight: bold;
+}
+.search2 {
+  padding: 10px;
+  width: 20%;
+  border-radius: 10px;
+  border: none;
+  /* font-size: 16px; */
+}
+@media (max-width: 768px) {
+  .navbar2 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    gap: 10px;
+  }
+  .right-icons2 {
+    order: 3;
+  }
+  .logo-icon2 {
+    font-size: 24px;
+    order: 1;
+    flex: 0 0 auto;
+  }
+
+  .search2 {
+    flex: 1 1 auto;
+    order: 2;
+    margin: 0 10px;
+  }
+
+  .menu-icon2 {
+    display: block;
+    order: 3;
+    flex: 0 0 auto;
+  }
+
+  .icon22 {
+    order: 4;
+    flex: 0 0 auto;
+    margin-left: 10px;
+  }
+  .nav-links2 {
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    /* background-color: #0a152f; */
+    background-color: #db0909;
+    padding: 10px 0;
+  }
+  .nav-links2 .dropdown-menu2 {
+    position: static;
+    width: 100%;
+    box-shadow: none;
+  }
+  .nav-links2 .dropdown2:hover .dropdown-menu2 {
+    display: none;
+  }
+
+  .nav-links2 .dropdown2.active .dropdown-menu2 {
+    display: block;
+  }
+  .nav-links2.active2 {
+    display: flex;
+  }
+  .dropdown-menu2 li {
+    /* color: #0a152f; */
+    color: #db0909;
+  }
+}
+.profile-pic2 {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  cursor: pointer;
+  object-fit: cover;
+  margin-left: 20px;
+}
+.right-icons2 {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+.logo-section2 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.shop-name2 {
+  font-size: 24px;
+  font-weight: bold;
+  color: white;
+}
+.navbar-desktop {
+  display: none;
+}
+.navbar-mobile {
+  display: block;
+}
+
+/* For screens 1024px and above: show desktop navbar, hide mobile navbar */
+@media screen and (min-width: 1024px) {
+  .navbar-desktop {
+    display: block;
+  }
+  .navbar-mobile {
+    display: none;
+  }
+}
+
+/*About nav*/
+
+.nav-link {
+  /* color: #333; */
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 16px;
+  margin-right: 15px;
+}
+
+.nav-link:hover {
+  color: #007bff;
+}
+
+/* Modal overlay */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+/* Modal content box */
+.modal-box {
+  position: relative; /* REQUIRED for absolute positioning inside it */
+  background-color: #fff;
+  padding: 30px;
+  width: 500px;
+  max-width: 90%;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Close button */
+.close-button {
+  position: absolute;
+  top: 10px;
+  /* right: 15px; */
+  left: 200px;
+  background: none;
+  border: none;
+  font-size: 26px;
+  font-weight: bold;
+  color: #555;
+  cursor: pointer;
+  line-height: 1;
+  /* margin-left: 30px; */
+}
+
+.close-button:hover {
+  color: #e74c3c;
+}
+
+/* Modal content */
+.modal-title {
+  margin-top: 0;
+  font-size: 24px;
+  color: #222;
+}
+
+.modal-text {
+  font-size: 16px;
+  color: #555;
+  line-height: 1.6;
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+    transform: scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+}
+
+.fade-out {
+  animation: fadeOut 0.3s ease forwards;
+}
+
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-form label {
+  margin-bottom: 6px;
+  font-weight: 500;
+  color: #333;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 10px 12px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 15px;
+  transition: border 0.2s;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #4CAF50;
+  outline: none;
+}
+
+.contact-submit {
+  background-color: #4CAF50;
+  color: white;
+  font-weight: bold;
+  border: none;
+  padding: 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.contact-submit:hover {
+  background-color: #45a049;
+}
+
+/* Chat Icon */
+.chat-icon {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #0a7cff;
+  color: white;
+  padding: 14px;
+  border-radius: 50%;
+  font-size: 22px;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+}
+
+/* Chat Box */
+.chat-box {
+  position: fixed;
+  bottom: 0;
+  right: 20px;
+  width: 320px;
+  height: 280px;
+  background-color: #fff;
+  border-radius: 10px 10px 0 0;
+  box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  z-index: 999;
+  animation: fadeInUp 0.3s ease;
+}
+
+/* Chat Header */
+.chat-header {
+  background-color: #0a7cff;
+  color: white;
+  padding: 12px 16px;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.chat-header-left {
+  display: flex;
+  align-items: center;
+}
+
+.chat-person-icon {
+  margin-right: 8px;
+}
+
+.chat-close {
+  cursor: pointer;
+  font-size: 20px;
+}
+
+/* Chat Body */
+.chat-body {
+  padding: 12px;
+  height: 140px;
+  overflow-y: auto;
+  font-size: 14px;
+  color: #333;
+}
+
+.bot-message {
+  display: flex;
+  align-items: flex-start;
+}
+
+.bot-icon {
+  font-size: 18px;
+  margin-right: 6px;
+}
+
+.typing-text {
+  white-space: pre-wrap;
+  animation: typing 1s steps(40, end);
+}
+
+/* Chat Input */
+.chat-input {
+  display: flex;
+  padding: 10px;
+  border-top: 1px solid #eee;
+}
+
+.chat-input input {
+  flex: 1;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.chat-input button {
+  margin-left: 8px;
+  padding: 8px 12px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: not-allowed;
+}
+
+/* Animation */
+@keyframes fadeInUp {
+  from {
+    transform: translateY(50%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
