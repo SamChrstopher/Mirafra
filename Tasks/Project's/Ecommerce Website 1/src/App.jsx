@@ -34,16 +34,19 @@ function App() {
 
   const images = [
     "https://cdn.venngage.com/template/thumbnail/full/5a5f1c47-6934-45fc-b94e-447e4b6a7567.webp",
-    "https://via.placeholder.com/1200x180?text=Slide+2",
-    "https://via.placeholder.com/1200x180?text=Slide+3",
+    // "https://cdn.venngage.com/template/thumbnail/small/557f35ae-514f-49bd-9324-cfc67f10cba5.webp",
+    "https://cdn.venngage.com/template/thumbnail/small/881885c3-fdeb-4294-b234-32b4da100008.webp",
+    "https://cdn.venngage.com/template/thumbnail/small/9038be46-f766-427f-b140-26a94675391c.webp",
   ];
 
   useEffect(() => {
     const interval = setInterval(() => {
-      goToNext();
-    }, 3000);
+      setCurrentIndex((prevIndex) =>
+        prevIndex === images.length - 1 ? 0 : prevIndex + 1
+      );
+    }, 3000); // changes every 3 seconds
 
-    return () => clearInterval(interval);
+    return () => clearInterval(interval); // Cleanup on unmount
   }, []);
 
   useEffect(() => {
@@ -87,6 +90,10 @@ function App() {
       setAnimatedMessage("");
     }
   }, [isChatOpen]);
+
+  const goToNext = () => {
+    setCurrentIndex((prev) => (prev === images.length - 1 ? 0 : prev + 1));
+  };
 
   const getGreetingTime = () => {
     const hour = new Date().getHours();
@@ -435,7 +442,11 @@ function App() {
       </div>
 
       <div className="slider-container">
-        <img src={images[currentIndex]} alt="Banner" className="slider-image" />
+        <img
+          src={images[currentIndex]}
+          alt="Banner"
+          className="slider-image"
+        />
       </div>
 
       {/* Offer Image */}
