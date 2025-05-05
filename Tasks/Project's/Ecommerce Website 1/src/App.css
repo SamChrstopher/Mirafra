@@ -1155,10 +1155,9 @@ input[type="search"] {
     opacity: 1;
   }
 }
-
 .slider-container {
   width: 70%;
-  height: 180px;
+  height: 170px;
   margin: 20px auto;
   overflow: hidden;
   border-radius: 10px;
