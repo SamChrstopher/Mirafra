@@ -30,6 +30,21 @@ function App() {
   const [animatedMessage, setAnimatedMessage] = useState("");
 
   const printRef = useRef();
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const images = [
+    "https://cdn.venngage.com/template/thumbnail/full/5a5f1c47-6934-45fc-b94e-447e4b6a7567.webp",
+    "https://via.placeholder.com/1200x180?text=Slide+2",
+    "https://via.placeholder.com/1200x180?text=Slide+3",
+  ];
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      goToNext();
+    }, 3000);
+
+    return () => clearInterval(interval);
+  }, []);
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -419,8 +434,12 @@ function App() {
         </div>
       </div>
 
+      <div className="slider-container">
+        <img src={images[currentIndex]} alt="Banner" className="slider-image" />
+      </div>
+
       {/* Offer Image */}
-      {searchItem.trim() === "" && (
+      {/* {searchItem.trim() === "" && (
         <div className="offer-section">
           <img
             src="./src/assets/7005953.jpg"
@@ -428,7 +447,7 @@ function App() {
             className="offer-image"
           />
         </div>
-      )}
+      )} */}
 
       {/* Auth Modal */}
       {showAuthModal && (
