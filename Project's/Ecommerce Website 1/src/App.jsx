@@ -2,6 +2,10 @@ import React, { useState, useEffect, useRef } from "react";
 import db from "./db.json";
 import "./App.css";
 
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+
 function App() {
   const [apiData, setApiData] = useState([]);
   const [filteredData, setFilteredData] = useState([]);
@@ -30,24 +34,28 @@ function App() {
   const [animatedMessage, setAnimatedMessage] = useState("");
 
   const printRef = useRef();
-  const [currentIndex, setCurrentIndex] = useState(0);
 
   const images = [
     "https://cdn.venngage.com/template/thumbnail/full/5a5f1c47-6934-45fc-b94e-447e4b6a7567.webp",
-    // "https://cdn.venngage.com/template/thumbnail/small/557f35ae-514f-49bd-9324-cfc67f10cba5.webp",
-    "https://cdn.venngage.com/template/thumbnail/small/881885c3-fdeb-4294-b234-32b4da100008.webp",
-    "https://cdn.venngage.com/template/thumbnail/small/9038be46-f766-427f-b140-26a94675391c.webp",
+    "https://cdn.shopify.com/s/files/1/0355/8296/7943/files/po-banner_a8ef554f-bbf2-4b3e-8bfb-d6673e9cb2c1.jpg?v=1644383681",
+    "https://i.pinimg.com/736x/5b/85/0a/5b850a5c336da5de5d245b653c97f493.jpg",
+    "https://i.pinimg.com/736x/e7/0d/f9/e70df986e2c90e79909638bebfc9bbe2.jpg",
+    "https://i.pinimg.com/736x/80/6e/08/806e081d077e25abd9b8ffdfaaecf4ab.jpg",
+    "https://i.pinimg.com/736x/c0/47/10/c04710efb63bcb20c5153ff2fb9925cb.jpg",
+    "https://i.pinimg.com/736x/0c/45/91/0c459146087dd9392c1a369405b9fb35.jpg",
   ];
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentIndex((prevIndex) =>
-        prevIndex === images.length - 1 ? 0 : prevIndex + 1
-      );
-    }, 3000); // changes every 3 seconds
 
-    return () => clearInterval(interval); // Cleanup on unmount
-  }, []);
+  const settings = {
+    dots: false,
+    infinite: true,
+    speed: 500,
+    autoplay: true,
+    autoplaySpeed: 3000,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    arrows: false,
+  };
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -441,24 +449,31 @@ function App() {
         </div>
       </div>
 
-      <div className="slider-container">
-        <img
-          src={images[currentIndex]}
-          alt="Banner"
-          className="slider-image"
-        />
-      </div>
+      {/* <div className="slider-container">
+        <img src={images[currentIndex]} alt="Banner" className="slider-image" />
+      </div> */}
 
-      {/* Offer Image */}
-      {/* {searchItem.trim() === "" && (
-        <div className="offer-section">
-          <img
-            src="./src/assets/7005953.jpg"
-            alt="Special Offer"
-            className="offer-image"
-          />
+      {searchItem.trim() === "" && (
+        <div style={{ width: "80%", margin: "0 auto", paddingTop: "20px" }}>
+          <Slider {...settings}>
+            {images.map((img, index) => (
+              <div key={index}>
+                <img
+                  src={img}
+                  alt={`Slide ${index + 1}`}
+                  className="carousel-image"
+                  style={{
+                    width: "100%",
+                    height: "auto",
+                    objectFit: "contain",
+                    borderRadius: "10px",
+                  }}
+                />
+              </div>
+            ))}
+          </Slider>
         </div>
-      )} */}
+      )}
 
       {/* Auth Modal */}
       {showAuthModal && (
