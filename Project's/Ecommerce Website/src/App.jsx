@@ -35,16 +35,21 @@ function App() {
 
   const printRef = useRef();
 
+  const [isOrderHistoryOpen, setIsOrderHistoryOpen] = useState(false);
+  const [showCartDropdown, setShowCartDropdown] = useState(false);
+
+  const [orderHistory, setOrderHistory] = useState(() => {
+    const stored = localStorage.getItem("orderHistory");
+    return stored ? JSON.parse(stored) : [];
+  });
+
   const images = [
     "https://cdn.venngage.com/template/thumbnail/full/5a5f1c47-6934-45fc-b94e-447e4b6a7567.webp",
     "https://cdn.shopify.com/s/files/1/0355/8296/7943/files/po-banner_a8ef554f-bbf2-4b3e-8bfb-d6673e9cb2c1.jpg?v=1644383681",
-    "https://i.pinimg.com/736x/5b/85/0a/5b850a5c336da5de5d245b653c97f493.jpg",
-    "https://i.pinimg.com/736x/e7/0d/f9/e70df986e2c90e79909638bebfc9bbe2.jpg",
-    "https://i.pinimg.com/736x/80/6e/08/806e081d077e25abd9b8ffdfaaecf4ab.jpg",
-    "https://i.pinimg.com/736x/c0/47/10/c04710efb63bcb20c5153ff2fb9925cb.jpg",
-    "https://i.pinimg.com/736x/0c/45/91/0c459146087dd9392c1a369405b9fb35.jpg",
+    "https://www.sammobile.com/wp-content/uploads/2017/09/anniversary_banner_d.jpg",
+    "https://www.grodoor.in/uploads/category_banner/476238707b4a74bb27adceb7b2db702daed598.png",
+    "https://thecare.com.sg/wp-content/uploads/2022/07/TC-Main-Banner-2-3.jpg",
   ];
-
 
   const settings = {
     dots: false,
@@ -75,7 +80,6 @@ function App() {
 
     fetchProducts();
 
-    // User authentication check
     const storedUser = localStorage.getItem("user");
     if (storedUser) {
       const parsedUser = JSON.parse(storedUser);
@@ -93,11 +97,15 @@ function App() {
         setAnimatedMessage(fullMessage.slice(0, index));
         index++;
         if (index > fullMessage.length) clearInterval(interval);
-      }, 30); // typing speed
+      }, 30); 
     } else {
       setAnimatedMessage("");
     }
   }, [isChatOpen]);
+
+  useEffect(() => {
+    setErrorMessage(""); 
+  }, [isRegister]);
 
   const goToNext = () => {
     setCurrentIndex((prev) => (prev === images.length - 1 ? 0 : prev + 1));
@@ -115,8 +123,12 @@ function App() {
     const email = e.target.email.value;
     const password = e.target.password.value;
 
+    if (!registeredUser) {
+      setErrorMessage("❌ Please register before login.");
+      return;
+    }
+
     if (
-      registeredUser &&
       email === registeredUser.email &&
       password === registeredUser.password
     ) {
@@ -130,11 +142,12 @@ function App() {
       setIsAuthenticated(true);
       setUserProfilePic(userData.profilePic);
       setShowAuthModal(false);
-      setErrorMessage("");
+      setErrorMessage(""); 
+
+      alert(`✅ Welcome ${registeredUser.username || "User"}!`);
     } else {
       setErrorMessage("❌ Please enter the correct email or password.");
     }
-    alert("Welcome!");
   };
 
   const handleRegister = (e) => {
@@ -143,11 +156,11 @@ function App() {
     const password = e.target.password.value;
     const username = e.target.username.value;
 
-    // Save registered user
     setRegisteredUser({ email, password, username });
-    setIsRegister(false);
-    setErrorMessage("✅ Registered successfully. Please login.");
-    alert("Registration Successful ✅");
+    alert("✅ Registered successfully. Please login.");
+
+    setErrorMessage(""); 
+    setIsRegister(false); 
   };
 
   const handleLogout = () => {
@@ -157,7 +170,6 @@ function App() {
     setShowAuthModal(true);
   };
 
-  // Add item to the cart
   const handleAddToCart = (product) => {
     const existingItem = cartItems.find((item) => item.id === product.id);
     if (existingItem) {
@@ -179,7 +191,6 @@ function App() {
     );
   };
 
-  // Remove an item from the cart
   const handleRemoveItem = (id) => {
     setCartItems(cartItems.filter((item) => item.id !== id));
   };
@@ -187,7 +198,31 @@ function App() {
   const handlePurchase = () => {
     const printContents = printRef.current.innerHTML;
     const originalContents = document.body.innerHTML;
+
     alert("✅ Proceeding to the Checkout...");
+
+    const newOrder = {
+      id: Date.now(),
+      date: new Date().toLocaleDateString(),
+      time: new Date().toLocaleTimeString(),
+      items: cartItems.map((item) => ({
+        id: item.id,
+        title: item.title,
+        image: item.image,
+        price: item.price,
+        quantity: item.quantity,
+        total: (item.price * item.quantity).toFixed(2),
+      })),
+      total: cartItems.reduce(
+        (acc, item) => acc + item.quantity * item.price,
+        0
+      ),
+    };
+
+    const updatedHistory = [...orderHistory, newOrder];
+    setOrderHistory(updatedHistory);
+    localStorage.setItem("orderHistory", JSON.stringify(updatedHistory));
+
     document.body.innerHTML = printContents;
     window.print();
     document.body.innerHTML = originalContents;
@@ -195,21 +230,19 @@ function App() {
     setCartItems([]);
     window.location.reload();
   };
+
   const handleSubmit2 = (e) => {
     e.preventDefault();
 
-    // Add fade-out effect
     const modalBox = document.querySelector(".modal-box");
     modalBox.classList.add("fade-out");
 
-    // Wait for animation to finish (300ms), then hide modal and show alert
     setTimeout(() => {
       setShowContact(false);
       alert("✅ Message sent successfully!");
-    }, 300); // match with animation duration
+    }, 300); 
   };
 
-  // Search handler
   const handleChange = (e) => {
     const searchTerm = e.target.value.toLowerCase();
     setSearchItem(searchTerm);
@@ -281,14 +314,37 @@ function App() {
                   />
                 )}
               </div>
-              <span
-                className="icon2"
-                onClick={() => setIsCartOpen(true)}
-                title="Cart"
+              <div
+                className="cart-icon-wrapper"
+                onMouseEnter={() => setShowCartDropdown(true)}
+                onMouseLeave={() => setShowCartDropdown(false)}
               >
-                <i className="fi fi-sr-shopping-cart-check logo-icon2"></i>{" "}
-                {cartItems.reduce((acc, item) => acc + item.quantity, 0)}
-              </span>
+                <span className="cart-icon" title="Cart">
+                  <i className="fi fi-sr-shopping-cart-check logo-icon22"></i>
+                  <span className="cart-count">{cartItems.length}</span>
+                </span>
+
+                {showCartDropdown && (
+                  <div className="cart-dropdown">
+                    <div
+                      onClick={() => {
+                        setIsCartOpen(true);
+                        setShowCartDropdown(false);
+                      }}
+                    >
+                      🛒 Your Cart
+                    </div>
+                    <div
+                      onClick={() => {
+                        setIsOrderHistoryOpen(true);
+                        setShowCartDropdown(false);
+                      }}
+                    >
+                      📦 History
+                    </div>
+                  </div>
+                )}
+              </div>
             </div>
           </div>
           <ul className={`nav-links ${isMobileMenuOpen ? "active" : ""}`}>
@@ -437,21 +493,40 @@ function App() {
                 />
               )}
             </div>
-            <span
-              className="icon22"
-              onClick={() => setIsCartOpen(true)}
-              title="Cart"
+            <div
+              className="cart-icon-wrapper"
+              onMouseEnter={() => setShowCartDropdown(true)}
+              onMouseLeave={() => setShowCartDropdown(false)}
             >
-              <i className="fi fi-sr-shopping-cart-check logo-icon22"></i>{" "}
-              {cartItems.reduce((acc, item) => acc + item.quantity, 0)}
-            </span>
+              <span className="cart-icon" title="Cart">
+                <i className="fi fi-sr-shopping-cart-check logo-icon22"></i>
+                <span className="cart-count">{cartItems.length}</span>
+              </span>
+
+              {showCartDropdown && (
+                <div className="cart-dropdown">
+                  <div
+                    onClick={() => {
+                      setIsCartOpen(true);
+                      setShowCartDropdown(false);
+                    }}
+                  >
+                    🛒 Your Cart
+                  </div>
+                  <div
+                    onClick={() => {
+                      setIsOrderHistoryOpen(true);
+                      setShowCartDropdown(false);
+                    }}
+                  >
+                    📦 History
+                  </div>
+                </div>
+              )}
+            </div>
           </div>
         </div>
       </div>
-
-      {/* <div className="slider-container">
-        <img src={images[currentIndex]} alt="Banner" className="slider-image" />
-      </div> */}
 
       {searchItem.trim() === "" && (
         <div style={{ width: "80%", margin: "0 auto", paddingTop: "20px" }}>
@@ -472,6 +547,71 @@ function App() {
               </div>
             ))}
           </Slider>
+        </div>
+      )}
+
+      {isOrderHistoryOpen && (
+        <div className="order-history-sidebar">
+          <div className="order-history-header">
+            <h2>Order History</h2>
+            <span
+              className="close-button2"
+              onClick={() => setIsOrderHistoryOpen(false)}
+            >
+              ❌
+            </span>
+          </div>
+
+          <div className="order-history-content">
+            {orderHistory.length === 0 ? (
+              <p>No order history found.</p>
+            ) : (
+              orderHistory.map((order, index) => (
+                <div key={index} className="order-block">
+                  <div className="order-datetime">
+                    <span>{order.date}</span>
+                    <span>{order.time}</span>
+                  </div>
+                  <div className="order-products">
+                    {order.items.map((item, i) => (
+                      <div key={i} className="order-product-row">
+                        <img
+                          src={item.image}
+                          alt={item.title}
+                          className="order-product-img"
+                        />
+                        <span className="order-product-title">
+                          {item.title}
+                        </span>
+                        <div className="order-product-details">
+                          <span className="order-product-qty">
+                            x{item.quantity}
+                          </span>
+                          <span className="order-product-price">
+                            ₹{item.total}
+                          </span>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              ))
+            )}
+          </div>
+
+          {orderHistory.length > 0 && (
+            <div className="clear-history-container">
+              <button
+                className="clear-history-button"
+                onClick={() => {
+                  setOrderHistory([]);
+                  localStorage.removeItem("orderHistory");
+                }}
+              >
+                Clear History
+              </button>
+            </div>
+          )}
         </div>
       )}
 
@@ -500,7 +640,6 @@ function App() {
               <button type="submit">{isRegister ? "Register" : "Login"}</button>
             </form>
 
-            {/* Show error or success message */}
             {errorMessage && (
               <p
                 style={{
@@ -522,7 +661,6 @@ function App() {
         </div>
       )}
 
-      {/* Chat Support Icon & Sidebar */}
       {isChatOpen && (
         <div className="chat-box">
           <div className="chat-header">
@@ -777,7 +915,6 @@ function App() {
           )}
         </div>
 
-        {/* Cart Sidebar */}
         {isCartOpen && (
           <div className="cart-sidebar">
             <div className="cart-header">
@@ -849,7 +986,7 @@ function App() {
               border: "2px solid #eee",
             }}
           >
-            {/* Header */}
+  
             <div
               style={{
                 display: "flex",
@@ -923,7 +1060,6 @@ function App() {
               </tbody>
             </table>
 
-            {/* Footer */}
             <div
               style={{
                 marginTop: "40px",
